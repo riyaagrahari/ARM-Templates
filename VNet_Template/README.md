@@ -20,11 +20,13 @@ Click on Visualize button for viewing the template and design in armviz.io.
 
 Upload template file using upload option on Azure CLI portal.
 Use following Azure CLI command to execute template
+
 ####az group deployment create --resource-group Template-1 --template-file template.json
 
 ### 3. Azure Powershell Commands
 
 Upload template file using upload option, change current directory to home directory of azure user as it is default folder for storing uploaded files(use cd).
 Use following Azure Powershell Command to execute template
+
 ####New-AzResourceGroupDeployment -ResourceGroupName Template-1 -TemplateFile template.json
 
