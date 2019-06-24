@@ -1,6 +1,6 @@
 # Template to create Storage Account
 This template creates a Virtual Network with subnet named as subnet-deploy.
-For default values , you may refer to parameter_storage.json file.
+For default values , you may refer to [`parameter_storage.json`](https://github.com/riyaagrahari/ARM-Templates/blob/master/Storage_Template/parameter_storage.json) file.
 
 ### It can be executed by three ways:
 
