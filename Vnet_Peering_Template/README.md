@@ -1,6 +1,6 @@
-#  Template to create Virtual Network
+#  Template to create Virtual Network Peering
 This template creates peering between two existing Virtual Network.
-VNet1 and VNet2 should be Virtual Name. Name of existing virtual network can be changed in the template.
+For default valuess, you may refer to parameter_Peering.json file.
 
 ### It can be executed by three ways:
 
