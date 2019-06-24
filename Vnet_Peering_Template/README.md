@@ -1,4 +1,4 @@
-#  Template to create Virtual Network Peering In Existing Virtual Networks
+#  Template to create Virtual Network Peering Between Existing Virtual Networks
 This template creates peering between two existing Virtual Network. To create Virtual Network you can refer to [`Vnet Template`](https://raw.githubusercontent.com/riyaagrahari/ARM-Templates/master/VNet_Template/template.json)
 For default values, you may refer to parameter_Peering.json file.
 
