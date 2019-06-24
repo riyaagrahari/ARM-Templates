@@ -21,12 +21,12 @@ For default values , you may refer to parameter.json file.
 - Upload template file using upload option on Azure CLI portal.<br />
 - Use following Azure CLI command to execute template.
 ```bash
-az group deployment create --resource-group <Any already created Resource Group name > --template-file template_storage.json`
+az group deployment create --resource-group <Any already created Resource Group name > --template-file template_storage.json
 ```
 ### 3. Azure Powershell Commands
 
 - Upload template file using upload option, change current directory to home directory of azure user as it is default folder for storing uploaded files(use cd).<br />
 - Use following Azure Powershell Command to execute template.
-
-`New-AzResourceGroupDeployment -ResourceGroupName <Any already created Resource Group name > -TemplateFile template_storage.json`
-
+```bash
+New-AzResourceGroupDeployment -ResourceGroupName <Any already created Resource Group name > -TemplateFile template_storage.json
+```
