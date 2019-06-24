@@ -3,31 +3,14 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
 	      "VNet1": {
-            "type":"string",
-            "defaultValue": "VNet1",
-            "metadata": {
-                "description": "First VNet name"
-            }
+            "type":"string"
+            
         },
         "VNet2": {
-            "type": "string",
-            "defaultValue": "VNet2",
-            "metadata": {
-                "description": "Second VNet name"
-            }
+            "type": "string"
         }
     },
     "variables": {
-        "VNet1": {
-            "addressSpacePrefix": "192.156.0.0/24",
-            "subnetName": "subnet-VNet1",
-            "subnetPrefix": "192.156.0.0/16"
-        },
-        "VNet2": {
-            "addressSpacePrefix": "192.189.0.0/24",
-            "subnetName": "subnet-VNet2",
-            "subnetPrefix": "192.189.0.0/16"
-        },
         "VNet1toVNet2Peering": "[concat(parameters('VNet1'), '/Vnet1-peering-to-VNet2')]",
         "VNet2toVNet1Peering": "[concat(parameters('VNet2'), '/Vnet2-peering-to-VNet1')]"
     },
@@ -62,5 +45,4 @@
                    }
                }
 			   ]
- 
 }
