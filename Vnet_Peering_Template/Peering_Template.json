@@ -1,0 +1,66 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+	      "VNet1": {
+            "type":"string",
+            "defaultValue": "VNet1",
+            "metadata": {
+                "description": "First VNet name"
+            }
+        },
+        "VNet2": {
+            "type": "string",
+            "defaultValue": "VNet2",
+            "metadata": {
+                "description": "Second VNet name"
+            }
+        }
+    },
+    "variables": {
+        "VNet1": {
+            "addressSpacePrefix": "192.156.0.0/24",
+            "subnetName": "subnet-VNet1",
+            "subnetPrefix": "192.156.0.0/16"
+        },
+        "VNet2": {
+            "addressSpacePrefix": "192.189.0.0/24",
+            "subnetName": "subnet-VNet2",
+            "subnetPrefix": "192.189.0.0/16"
+        },
+        "VNet1toVNet2Peering": "[concat(parameters('VNet1'), '/Vnet1-peering-to-VNet2')]",
+        "VNet2toVNet1Peering": "[concat(parameters('VNet2'), '/Vnet2-peering-to-VNet1')]"
+    },
+        
+            "resources": [
+               {
+                  "apiVersion": "2019-02-01",
+                  "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
+                   "name": "[variables('VNet1toVNet2Peering')]",
+                   "properties": {
+                       "allowVirtualNetworkAccess": "true",
+                       "allowForwardedTraffic": "false",
+                       "allowGatewayTransit": "false",
+                       "useRemoteGateways": "false",
+                       "remoteVirtualNetwork": {
+                           "id": "[resourceId('Microsoft.Network/virtualNetworks',parameters('VNet2'))]"
+                       }
+                   }
+               },
+               {
+                   "apiVersion": "2019-02-01",
+                   "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
+                   "name": "[variables('VNet2toVNet1Peering')]",
+                   "properties": {
+                       "allowVirtualNetworkAccess": "true",
+                       "allowForwardedTraffic": "false",
+                       "allowGatewayTransit": "false",
+                       "useRemoteGateways": "false",
+                       "remoteVirtualNetwork": {
+                           "id": "[resourceId('Microsoft.Network/virtualNetworks',parameters('Vnet1'))]"
+                       }
+                   }
+               }
+			   ]
+ 
+}
