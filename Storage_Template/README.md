@@ -13,7 +13,7 @@ For default values , you may refer to [`parameter_storage.json`](https://github.
     <img src="http://armviz.io/visualizebutton.png"/>
 </a>
 
-- Click on Deploy to Azure button for deploying the template directly to Azure Portal.<br/>
+- Click on Deploy to Azure button for deploying the template directly to Azure Portal.Fill in the required parameters you want for deploying your template<br/>
 - Click on Visualize button for viewing the template and design in armviz.io.<br />
 
 ### 2. Azure CLI 
