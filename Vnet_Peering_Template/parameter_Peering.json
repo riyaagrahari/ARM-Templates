@@ -2,11 +2,23 @@
 	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
 	"content-version": "1.0.0.0",
 	 "parameters": {
-	      "VNet1": {
-            "value": "VNet1"
-        },
-        "VNet2": {
-            "value": "VNet2"
-        }
+	     "Virtual_Network1_Name": {
+            "value":"VNet1"   
+					},
+		"Virtual_Network2_Name":: {
+            "type": "VNet2"
+					}
+		"Allow_Virtual_Network_Access": {
+			"type": "true"
+				}
+		"Allow_Forwarded_Traffic": {
+			"type": "false"
+				}
+		"Allow_Gateway_Transit": {
+			"type": "false"
+				}
+		"Use_Remote_Gateways": {
+			"type": "false"
+				}
     }
 }

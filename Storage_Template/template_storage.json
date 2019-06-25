@@ -2,36 +2,36 @@
 	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
 	"contentVersion": "1.0.0.0",
 	"parameters": {
-		"storageAccountName": {
+		"storage_Account_Name": {
 			"type": "string"
 		},
-		"location": {
+		"storage_Account_Location": {
 			"type": "string"
 		},
-		"accountType": {
+		"storage_Account_Type": {
 			"type": "string"
 		},
-		"kind": {
+		"storage_Account_Kind": {
 			"type": "string"
 		},
-		"accessTier": {
+		"storage_Account-access_Tier": {
 			"type": "string"
 		}
 	},
 	"variables": {},
 	"resources": [{
-		"name": "[parameters('storageAccountName')]",
+		"name": "[parameters('storage_Account_Name')]",
 		"type": "Microsoft.Storage/storageAccounts",
 		"apiVersion": "2018-07-01",
-		"location": "[parameters('location')]",
+		"location": "[parameters('storage_Account_location')]",
 		"properties": {
-			"accessTier": "[parameters('accessTier')]"
+			"accessTier": "[parameters('storage_Account-access_Tier')]"
 		},
 		"dependsOn": [],
 		"sku": {
-			"name": "[parameters('accountType')]"
+			"name": "[parameters('storage_Account_Type')]"
 		},
-		"kind": "[parameters('kind')]"
+		"kind": "[parameters('storage_Account_Kind')]"
 	}],
 	"outputs": {}
 }
