@@ -30,7 +30,7 @@
 				]
 			},
 			"subnets": [{
-				"name": "subnet-frontEnd",
+				"name": "subnet-deploy",
 				"properties": {
 					"addressPrefix": "[parameters('Virtual-Network-subnetAddressPrefix')]"
 				}

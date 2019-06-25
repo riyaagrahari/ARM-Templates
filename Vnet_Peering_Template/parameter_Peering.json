@@ -9,16 +9,16 @@
             "value": "VNet2"
 					},
 		"Allow_Virtual_Network_Access": {
-			"value": "true"
+			"value": "[bool('true')]"
 				},
 		"Allow_Forwarded_Traffic": {
-			"value": "false"
+			"value": "[bool('false')]"
 				},
 		"Allow_Gateway_Transit": {
-			"value": "false"
+			"value": "[bool('false')]"
 				},
 		"Use_Remote_Gateways": {
-			"value": "false"
+			"value": "[bool('false')]"
 				}
     }
 }
