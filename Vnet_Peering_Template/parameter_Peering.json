@@ -6,19 +6,19 @@
             "value":"VNet1"   
 					},
 		"Virtual_Network2_Name": {
-            "type": "VNet2"
+            "value": "VNet2"
 					},
 		"Allow_Virtual_Network_Access": {
-			"type": "true"
+			"value": "true"
 				},
 		"Allow_Forwarded_Traffic": {
-			"type": "false"
+			"value": "false"
 				},
 		"Allow_Gateway_Transit": {
-			"type": "false"
+			"value": "false"
 				},
 		"Use_Remote_Gateways": {
-			"type": "false"
+			"value": "false"
 				}
     }
 }
