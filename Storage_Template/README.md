@@ -6,10 +6,10 @@ For default values , you may refer to [`parameter_storage.json`](https://github.
 
 ### 1. Azure Portal 
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Friyaagrahari%2FAzure-Templates%2Fmaster%2FStorage_Template%2Ftemplate_storage.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Friyaagrahari%2FARM-Templates%2Fmaster%2FStorage_Template%2Ftemplate_storage.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
-<a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2Friyaagrahari%2FAzure-Templates%2Fmaster%2FStorage_Template%2Ftemplate_storage.json" target="_blank">
+<a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2Friyaagrahari%2FARM-Templates%2Fmaster%2FStorage_Template%2Ftemplate_storage.json" target="_blank">
     <img src="http://armviz.io/visualizebutton.png"/>
 </a>
 
