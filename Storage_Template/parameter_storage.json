@@ -2,19 +2,19 @@
 	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
 	"content-version": "1.0.0.0",
 	"parameters": {
-		"location": {
+		"storageAccountlocation": {
 			"value": "westus"
 		},
 		"storageAccountName": {
 			"value": "storageaccount1236"
 		},
-		"accountType": {
+		"storageAccountType": {
 			"value": "Standard_RAGRS"
 		},
-		"kind": {
+		"storageAccountkind": {
 			"value": "StorageV2"
 		},
-		"accessTier": {
+		"storageAccount-accessTier": {
 			"value": "Hot"
 		}
 	}
