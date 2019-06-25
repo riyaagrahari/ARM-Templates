@@ -62,7 +62,7 @@
 				"properties": {
 					"addressPrefix": "[parameters('subnet3_AddressPrefix')]"
 				}
-			},
+			}
 			
 			],
 			"enableDdosProtection": "[parameters('enableDdosProtection_In_VirtualNetwork')]"
