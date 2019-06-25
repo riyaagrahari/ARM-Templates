@@ -2,22 +2,22 @@
 	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
 	"contentVersion": "1.0.0.0",
 	"parameters": {
-		"name": {
+		"Virtual-Network-name": {
 			"value": "Vnet1"
 			},
-		"resourceGroup": {
+		"Virtual-Network-resourceGroup": {
 			"value": "DeployGroup"
 			},
-		"location": {
+		"Virtual-Network-location": {
 			"value": "westus"
 			},
-		"addressPrefix": {
+		"Virtual-Network-addressPrefix": {
 			"value": "10.2.0.0/16"
 			},
-		"subnetAddressPrefix": {
+		"Virtual-Network-subnetAddressPrefix": {
 			"value": "10.2.0.0/24"
 			},
-		"enableDdosProtection": {
+		"enableDdosProtection_In_VirtualNetwork": {
 			"value": false
 			}
 		}

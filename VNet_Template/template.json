@@ -2,22 +2,22 @@
 	"$schema":"http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
 	"contentVersion": "1.0.0.0",
 	"parameters": {
-		"name": {
+		"Virtual-Network-name": {
 			"type": "String"
 			},
-		"resourceGroup": {
+		"Virtual-Network-resourceGroup": {
 			"type": "String"
 			},
-		"location": {
+		"Virtual-Network-location": {
 			"type": "String"
 			},
-		"addressPrefix": {
+		"Virtual-Network-addressPrefix": {
 			"type": "String"
 			},
-		"subnetAddressPrefix": {
+		"Virtual-Network-subnetAddressPrefix": {
 			"type": "String"
 			},
-		"enableDdosProtection": {
+		"enableDdosProtection_In_VirtualNetwork": {
 			"type": "Bool"
 			}
 		},
@@ -25,19 +25,19 @@
 		{
 			"type": "Microsoft.Network/virtualNetworks",
 			"apiVersion": "2019-02-01",
-			"name": "[parameters('name')]",
-			"location": "[parameters('location')]",
+			"name": "[parameters('Virtual-Network-name')]",
+			"location": "[parameters('Virtual-Network-location')]",
 			"properties": {
 				"addressSpace":{
 					"addressPrefixes": [
-						"[parameters('addressPrefix')]"
+						"[parameters('Virtual-Network-addressPrefix')]"
 						]
 					},
 					"subnets": [
 					{
 						"name": "subnet-frontEnd",
 						"properties": {
-							"addressPrefix": "[parameters('subnetAddressPrefix')]"
+							"addressPrefix": "[parameters('Virtual-Network-subnetAddressPrefix')]"
 							}
 						}
 					],
