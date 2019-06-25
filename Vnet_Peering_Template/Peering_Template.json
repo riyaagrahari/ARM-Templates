@@ -9,16 +9,16 @@
 			"type": "string"
 		},
 		"Allow_Virtual_Network_Access": {
-			"type": "boolean"
+			"type": "bool"
 		},
 		"Allow_Forwarded_Traffic": {
-			"type": "boolean"
+			"type": "bool"
 		},
 		"Allow_Gateway_Transit": {
-			"type": "boolean"
+			"type": "bool"
 		},
 		"Use_Remote_Gateways": {
-			"type": "boolean"
+			"type": "bool"
 		}
 	},
 	"variables": {
