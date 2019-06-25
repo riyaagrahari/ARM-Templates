@@ -14,11 +14,27 @@
 		"Virtual-Network-addressPrefix": {
 			"value": "10.2.0.0/16"
 			},
-		"subnetAddressPrefix": {
-			"value": "10.2.0.0/24"
-			},
+	
 		"enableDdosProtection_In_VirtualNetwork": {
 			"value": false
-			}
+			},
+		"subnet1_Name":{
+			"value": "Subnet-1"
+		},
+		"subnet2_Name":{
+			"value": "Subnet-2"
+		},
+		"subnet3_Name":{
+			"value": "Subnet-3"
+		},
+		"subnet1_AddressPrefix": {
+			"value": "10.2.1.0/24"
+		},
+		"subnet2_AddressPrefix": {
+			"value": "10.2.2.0/24"
+		},
+		"subnet3_AddressPrefix": {
+			"value": "10.2.3.0/24"
+		}
 		}
 	}

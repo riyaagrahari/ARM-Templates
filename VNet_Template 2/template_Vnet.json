@@ -1,0 +1,72 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"Virtual-Network-name": {
+			"type": "string"
+		},
+		"Virtual-Network-location": {
+			"type": "string"
+		},
+		"Virtual-Network-addressPrefix": {
+			"type": "string"
+		},
+		"subnet1_Name":{
+			"type": "string"
+		},
+		"subnet2_Name":{
+			"type": "string"
+		},
+		"subnet3_Name":{
+			"type": "string"
+		},
+		"subnet1_AddressPrefix": {
+			"type": "string"
+		},
+		"subnet2_AddressPrefix": {
+			"type": "string"
+		},
+		"subnet3_AddressPrefix": {
+			"type": "string"
+		},
+		"enableDdosProtection_In_VirtualNetwork": {
+			"type": "bool"
+		}
+	},
+	"resources": [{
+		"type": "Microsoft.Network/virtualNetworks",
+		"apiVersion": "2019-02-01",
+		"name": "[parameters('Virtual-Network-name')]",
+		"location": "[parameters('Virtual-Network-location')]",
+		"properties": {
+			"addressSpace": {
+				"addressPrefixes": [
+					"[parameters('Virtual-Network-addressPrefix')]"
+				]
+			},
+			"subnets": [
+			{
+				"name": "[parameters('subnet1_Name')]",
+				"properties": {
+					"addressPrefix": "[parameters('subnet1_AddressPrefix')]"
+				}
+			},
+			{
+				"name": "[parameters('subnet2_Name')]",
+				"properties": {
+					"addressPrefix": "[parameters('subnet2_AddressPrefix')]"
+				}
+			},
+			{
+				"name": "[parameters('subnet3_Name')]",
+				"properties": {
+					"addressPrefix": "[parameters('subnet3_AddressPrefix')]"
+				}
+			},
+			
+			],
+			"enableDdosProtection": "[parameters('enableDdosProtection_In_VirtualNetwork')]"
+		}
+	}],
+	"outputs": {}
+}

@@ -11,7 +11,7 @@
 		"Virtual-Network-addressPrefix": {
 			"type": "String"
 		},
-		"Virtual-Network-subnetAddressPrefix": {
+		"subnetAddressPrefix": {
 			"type": "String"
 		},
 		"enableDdosProtection_In_VirtualNetwork": {
@@ -32,10 +32,11 @@
 			"subnets": [{
 				"name": "subnet-deploy",
 				"properties": {
-					"addressPrefix": "[parameters('Virtual-Network-subnetAddressPrefix')]"
+					"addressPrefix": "[parameters('subnetAddressPrefix')]"
 				}
 			}],
-			"enableDdosProtection": "false"
+			"enableDdosProtection": "[parameters('enableDdosProtection_In_VirtualNetwork')]"
 		}
-	}]
+	}],
+	"outputs": {}
 }
