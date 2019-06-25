@@ -14,7 +14,7 @@
 		"storage_Account_Kind": {
 			"value": "StorageV2"
 		},
-		"storage_Account _accessTier": {
+		"storage_Account-access_Tier": {
 			"value": "Hot"
 		}
 	}
