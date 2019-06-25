@@ -2,7 +2,7 @@
 This template creates a Virtual Network with subnet named as subnet-deploy.
 For default values , you may refer to [`Parameter_Vnet.json`](https://github.com/riyaagrahari/ARM-Templates/blob/master/VNet_Template_MultipleSubnet/Parameter_Vnet.json) file.
 
-### It can be executed by three ways:
+## Three ways of execution:
 
 ### 1. Azure Portal 
 
