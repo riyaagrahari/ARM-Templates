@@ -58,6 +58,12 @@
 				"description": "Address-Prefix of Subnet 3 in CIDR format"
 			}
 		},
+		"Firewall_AddressPrefix": {
+			"type": "string",
+			"metadata": {
+				"description": "Address-Prefix of firewall in CIDR format"
+			}
+		},
 		"Admin_Subnet_Name": {
 			"type": "string",
 			"metadata": {
@@ -454,6 +460,12 @@
 							"networkSecurityGroup": {
 								"id": "[resourceId('Microsoft.Network/networkSecurityGroups',parameters('Database_NSG_Name'))]"
 							}
+						}
+					},
+					{
+						"name": "AzureFirewallSubnet",
+						"properties": {
+							"addressPrefix": "[parameters('Firewall_AddressPrefix')]"
 						}
 					}
 

@@ -35,6 +35,9 @@
 		"subnet3_AddressPrefix": {
 			"value": "10.0.4.0/24"
 		},
+		"Firewall_AddressPrefix": {
+			"value": "10.0.5.0/24"
+		},
 		"Webserver_NSG_Name": {
 			"value": "NSG_WEB_SERVER"
 		},

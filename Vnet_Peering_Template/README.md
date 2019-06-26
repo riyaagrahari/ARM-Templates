@@ -13,7 +13,7 @@ For default values, you may refer to [`Parameter.json`](https://github.com/riyaa
 <a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2Friyaagrahari%2FARM-Templates%2Fmaster%2FVnet_Peering_Template%2FTemplate.json" target="_blank">
     <img src="http://armviz.io/visualizebutton.png"/>
 </a>
-
+<br />
 - Click on Deploy to Azure button for deploying the template directly to Azure Portal.Fill in the required parameters you want for deploying your template<br/>
 - Click on Visualize button for viewing the template and design in armviz.io.<br />
 
