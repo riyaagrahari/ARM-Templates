@@ -1,5 +1,5 @@
-#  Template to create Virtual Network
-This template creates a Virtual Network with subnet named as subnet-deploy.
+#  Template to create Virtual Network with 3 subnets and their respective NSGs.
+This template creates a Virtual Network with 3 subnets (Webserver, API, Database). Further, Network Security Group are created for each and Inbound, Outbound rules are added to their respective NSG.
 For default values , you may refer to [`Parameter.json`](https://github.com/riyaagrahari/ARM-Templates/blob/master/VNet_Template_MultipleSubnet/Parameter.json) file.
 
 ## Three ways of execution:
