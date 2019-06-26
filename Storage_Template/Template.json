@@ -3,19 +3,24 @@
 	"contentVersion": "1.0.0.0",
 	"parameters": {
 		"storage_Account_Name": {
-			"type": "string"
+			"type": "string",
+			"metadata": "Name of Storage Account"
 		},
 		"storage_Account_Location": {
-			"type": "string"
+			"type": "string",
+			"metadata": "Location of Storage Account"
 		},
 		"storage_Account_Type": {
-			"type": "string"
+			"type": "string",
+			"metadata": "Type of Storage Account (like Standard_GRS, Standard_LRS etc.)"
 		},
 		"storage_Account_Kind": {
-			"type": "string"
+			"type": "string",
+			"metadata": "Kind of Storage Account (like StorageV2)"
 		},
 		"storage_Account-access_Tier": {
-			"type": "string"
+			"type": "string",
+			"metadata": "Access-Tier associated to Storage Account- Hot, Cold, Archive"
 		}
 	},
 	"variables": {},

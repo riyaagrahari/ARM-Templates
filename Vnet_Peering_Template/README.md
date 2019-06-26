@@ -1,16 +1,16 @@
 #  Template to create Virtual Network Peering Between Existing Virtual Networks
 This template creates peering between two existing Virtual Network.<br/>
-To create Virtual Network you can refer to [`Vnet Template`](https://github.com/riyaagrahari/ARM-Templates/blob/master/VNet_Template_SingleSubnet/template.json) file.
-For default values, you may refer to [`parameter_Peering.json`](https://github.com/riyaagrahari/ARM-Templates/blob/master/Vnet_Peering_Template/parameter_Peering.json) file.
+To create Virtual Network you can refer to [`Vnet Template`](https://github.com/riyaagrahari/ARM-Templates/blob/master/VNet_Template_SingleSubnet/Template.json) file.
+For default values, you may refer to [`Parameter.json`](https://github.com/riyaagrahari/ARM-Templates/blob/master/Vnet_Peering_Template/Parameter.json) file.
 
 ## Three ways of execution:
 
 ### 1. Azure Portal 
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Friyaagrahari%2FARM-Templates%2Fmaster%2FVnet_Peering_Template%2FPeering_Template.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Friyaagrahari%2FARM-Templates%2Fmaster%2FVnet_Peering_Template%2FTemplate.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
-<a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2Friyaagrahari%2FARM-Templates%2Fmaster%2FVnet_Peering_Template%2FPeering_Template.json" target="_blank">
+<a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2Friyaagrahari%2FARM-Templates%2Fmaster%2FVnet_Peering_Template%2FTemplate.json" target="_blank">
     <img src="http://armviz.io/visualizebutton.png"/>
 </a>
 

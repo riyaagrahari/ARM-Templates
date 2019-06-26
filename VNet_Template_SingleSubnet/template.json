@@ -3,19 +3,25 @@
 	"contentVersion": "1.0.0.0",
 	"parameters": {
 		"Virtual-Network-name": {
-			"type": "String"
+			"type": "String",
+			"metadata": "Name of Virtual Network"
 		},
 		"Virtual-Network-location": {
-			"type": "String"
+			"type": "String",
+			"metadata": "Location of Virtual Network"
+			
 		},
 		"Virtual-Network-addressPrefix": {
-			"type": "String"
+			"type": "String",
+			"metadata": "Address-Prefix of Virtual Network in CIDR format"
 		},
 		"subnetAddressPrefix": {
-			"type": "String"
+			"type": "String",
+			"metadata": "Address-Prefix of Subnet in CIDR format"
 		},
 		"enableDdosProtection_In_VirtualNetwork": {
-			"type": "Bool"
+			"type": "Bool",
+			"metadata": "DDoS protection allow or deny"
 		}
 	},
 	"resources": [{

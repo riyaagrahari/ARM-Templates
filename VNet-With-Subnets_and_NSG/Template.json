@@ -1,0 +1,139 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"Virtual-Network-name": {
+			"type": "string",
+			"metadata": "Name of Virtual Network"
+		},
+		"Virtual-Network-location": {
+			"type": "string",
+			"metadata": "Location of Virtual Network"
+		},
+		"Virtual-Network-addressPrefix": {
+			"type": "string",
+			"metadata": "Address-Prefix of Virtual Network in CIDR format"
+		},
+		"subnet1_Name":{
+			"type": "string",
+			"metadata": "Name of Subnet 1"
+		},
+		"subnet2_Name":{
+			"type": "string",
+			"metadata": "Name of Subnet 2"
+		},
+		"subnet3_Name":{
+			"type": "string",
+			"metadata": "Name of Subnet 3"
+		},
+		"subnet1_AddressPrefix": {
+			"type": "string",
+			"metadata": "Address-Prefix of Subnet 1 in CIDR format"
+		},
+		"subnet2_AddressPrefix": {
+			"type": "string",
+			"metadata": "Address-Prefix of Subnet 2 in CIDR format"
+			
+		},
+		"subnet3_AddressPrefix": {
+			"type": "string",
+			"metadata": "Address-Prefix of Subnet 3 in CIDR format"
+		},
+		"network_Security_Group_Name": {
+			"type": "string",
+			"metadata": "Name of Network Security Group"
+			
+		},
+		"network_Security_Group_location": {
+			"type": "string",
+			"metadata": "Location of Network Security Group"
+		},
+		"enableDdosProtection_In_VirtualNetwork": {
+			"type": "bool",
+			"metadata": "DDoS protection allow or deny"
+		}
+	},
+	
+	"resources": [
+	{
+				"apiVersion": "2019-02-01",
+				"type": "Microsoft.Network/networkSecurityGroups",
+				"name": "[parameters('network_Security_Group_Name')]",
+				"location": "[parameters('Virtual-Network-location')]",
+				"properties": {
+				 "securityRules": [
+				 {
+					"name": "HTTP-request",
+					"properties": {
+						"description": "Rule for HTTP request traffic",
+						"protocol": "Tcp",
+						"sourcePortRange": "*",
+						"sourceAddressPrefix": "*",
+						"destinationPortRange": "80",
+						"destinationAddressPrefix": "[parameters('subnet1_AddressPrefix')]",
+						"access": "Allow",
+						"priority": 100,
+						"direction": "Inbound"
+						}
+				},
+			
+				 {
+					"name": "HTTPS-request",
+					"properties": {
+						"description": "Rule for HTTPS SSSL request traffic",
+						"protocol": "Tcp",
+						"sourcePortRange": "*",
+						"sourceAddressPrefix": "*",
+						"destinationPortRange": "443",
+						"destinationAddressPrefix": "[parameters('subnet1_AddressPrefix')]",
+						"access": "Allow",
+						"priority": 110,
+						"direction": "Inbound"
+					}
+				}
+					
+			]
+		}
+	},
+	
+	{
+		"type": "Microsoft.Network/virtualNetworks",
+		"apiVersion": "2019-02-01",
+		"name": "[parameters('Virtual-Network-name')]",
+		"location": "[parameters('Virtual-Network-location')]",
+		"properties": {
+			"addressSpace": {
+				"addressPrefixes": [
+					"[parameters('Virtual-Network-addressPrefix')]"
+				]
+			},
+			"subnets": [
+			{
+				"name": "[parameters('subnet1_Name')]",
+				"properties": {
+					"addressPrefix": "[parameters('subnet1_AddressPrefix')]",
+					"networkSecurityGroup": {
+					"id": "[resourceId('Microsoft.Network/networkSecurityGroups',parameters('network_Security_Group_Name'))]"
+					}
+				}
+			},
+			{
+				"name": "[parameters('subnet2_Name')]",
+				"properties": {
+					"addressPrefix": "[parameters('subnet2_AddressPrefix')]"
+				}
+			},
+			{
+				"name": "[parameters('subnet3_Name')]",
+				"properties": {
+					"addressPrefix": "[parameters('subnet3_AddressPrefix')]"
+				}
+			}
+			
+			],
+			"enableDdosProtection": "[parameters('enableDdosProtection_In_VirtualNetwork')]"
+		}
+	}
+],
+	"outputs": {}
+}

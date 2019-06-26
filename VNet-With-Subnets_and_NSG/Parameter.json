@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"Virtual-Network-name": {
+			"value": "Vnet1"
+			},
+		"Virtual-Network-resourceGroup": {
+			"value": "DeployGroup"
+			},
+		"Virtual-Network-location": {
+			"value": "westus"
+			},
+		"Virtual-Network-addressPrefix": {
+			"value": "10.2.0.0/16"
+			},
+		"enableDdosProtection_In_VirtualNetwork": {
+			"value": false
+			},
+		"subnet1_Name":{
+			"value": "Subnet-1"
+		},
+		"subnet2_Name":{
+			"value": "Subnet-2"
+		},
+		"subnet3_Name":{
+			"value": "Subnet-3"
+		},
+		"subnet1_AddressPrefix": {
+			"value": "10.2.1.0/24"
+		},
+		"subnet2_AddressPrefix": {
+			"value": "10.2.2.0/24"
+		},
+		"subnet3_AddressPrefix": {
+			"value": "10.2.3.0/24"
+		},
+		"network_Security_Group_Name": {
+			"value": "NSG_WEB_SERVER"
+		},
+		"network_Security_Group_location": {
+			"value": "westus"
+		}
+		
+		}
+	}
