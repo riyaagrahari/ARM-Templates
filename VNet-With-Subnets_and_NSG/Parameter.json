@@ -3,41 +3,46 @@
 	"contentVersion": "1.0.0.0",
 	"parameters": {
 		"Virtual-Network-name": {
-			"value": "Vnet1"
-			},
-		"Virtual-Network-resourceGroup": {
-			"value": "DeployGroup"
-			},
+			"value": "Vnet7997"
+		},
 		"Virtual-Network-addressPrefix": {
-			"value": "10.2.0.0/16"
-			},
+			"value": "10.0.0.0/16"
+		},
 		"enableDdosProtection_In_VirtualNetwork": {
 			"value": false
-			},
-		"subnet1_Name":{
+		},
+		"subnet1_Name": {
 			"value": "Subnet-1"
 		},
-		"subnet2_Name":{
+		"subnet2_Name": {
 			"value": "Subnet-2"
 		},
-		"subnet3_Name":{
+		"subnet3_Name": {
 			"value": "Subnet-3"
 		},
+		"Admin_Subnet_Name": {
+			"value": "Admin-Subnet"
+		},
+		"Admin_Subnet_AddressPrefix": {
+			"value": "10.0.1.0/24"
+		},
 		"subnet1_AddressPrefix": {
-			"value": "10.2.1.0/24"
+			"value": "10.0.2.0/24"
 		},
 		"subnet2_AddressPrefix": {
-			"value": "10.2.2.0/24"
+			"value": "10.0.3.0/24"
 		},
 		"subnet3_AddressPrefix": {
-			"value": "10.2.3.0/24"
+			"value": "10.0.4.0/24"
 		},
-		"network_Security_Group_Name": {
+		"Webserver_NSG_Name": {
 			"value": "NSG_WEB_SERVER"
 		},
-		"network_Security_Group_location": {
-			"value": "westus"
-		}
-		
+		"API_NSG_Name": {
+			"value": "NSG_API"
+		},
+		"Database_NSG_Name": {
+			"value": "NSG_DATABASE"
 		}
 	}
+}
