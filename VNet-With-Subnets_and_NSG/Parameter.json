@@ -8,9 +8,6 @@
 		"Virtual-Network-resourceGroup": {
 			"value": "DeployGroup"
 			},
-		"Virtual-Network-location": {
-			"value": "westus"
-			},
 		"Virtual-Network-addressPrefix": {
 			"value": "10.2.0.0/16"
 			},

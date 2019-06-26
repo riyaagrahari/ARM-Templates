@@ -4,43 +4,63 @@
 	"parameters": {
 		"Virtual-Network-name": {
 			"type": "string",
-			"metadata": "Name of Virtual-Network"
+			"metadata":{
+			"description": "Name of Virtual-Network"
+			}
 		},
 		"Virtual-Network-location": {
 			"type": "string",
-			"metadata": "Location of Virtual Network"
+			"metadata":{
+			"description": "Location of Virtual Network"
+			}
 		},
 		"Virtual-Network-addressPrefix": {
 			"type": "string",
-			"metadata": "Address-Prefix of Virtual Network in CIDR format"
+			"metadata":{
+			"description": "Address-Prefix of Virtual Network in CIDR format"
+			}
 		},
 		"subnet1_Name":{
 			"type": "string",
-			"metadata": "Name of Subnet 1"
+			"metadata":{
+			"description": "Name of Subnet 1"
+			}
 		},
 		"subnet2_Name":{
 			"type": "string",
-			"metadata": "Name of Subnet 2"
+			"metadata":{
+			"description": "Name of Subnet 2"
+			}
 		},
 		"subnet3_Name":{
 			"type": "string",
-			"metadata": "Name of Subnet 3"
+			"metadata":{
+			"description": "Name of Subnet 3"
+			}
 		},
 		"subnet1_AddressPrefix": {
 			"type": "string",
-			"metadata": "Address-Prefix of Subnet 1 in CIDR format"
+			"metadata":{
+			"description": "Address-Prefix of Subnet 1 in CIDR format"
+			}
 		},
 		"subnet2_AddressPrefix": {
 			"type": "string",
-			"metadata": "Address-Prefix of Subnet 2 in CIDR format"
+			"metadata":{
+			"description": "Address-Prefix of Subnet 2 in CIDR format"
+			}
 		},
 		"subnet3_AddressPrefix": {
 			"type": "string",
-			"metadata": "Address-Prefix of Subnet 3 in CIDR format"
+			"metadata":{
+			"description": "Address-Prefix of Subnet 3 in CIDR format"
+			}
 		},
 		"enableDdosProtection_In_VirtualNetwork": {
 			"type": "bool",
-			"metadata": "DDoS protection allow or deny"
+			"metadata":{
+			"description": "DDoS protection allow or deny"
+			}
 		}
 	},
 	"resources": [{
