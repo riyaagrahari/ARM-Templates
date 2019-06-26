@@ -1,4 +1,4 @@
-#  Template to create Virtual Network
+#  Template to create Virtual Network With Multiple Subnets
 This template creates a Virtual Network with three subnets.
 For default values , you may refer to [`Parameter.json`](https://github.com/riyaagrahari/ARM-Templates/blob/master/VNet_Template_MultipleSubnet/Parameter.json) file.
 
