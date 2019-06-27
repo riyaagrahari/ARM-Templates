@@ -31,12 +31,12 @@ Deployment of virtual machine needs to be done by the user using the template. T
 - Upload template file using upload option on Azure CLI portal.<br />
 - Use following Azure CLI command to execute template.
 ```bash
-az group deployment create --resource-group Template-1 --template-file template.json
+az group deployment create --resource-group <Resource Group Name> --template-file template.json
 ```
 ### 3. Azure Powershell Commands
 
 - Upload template file using upload option, change current directory to home directory of azure user as it is default folder for storing uploaded files(use cd).<br />
 - Use following Azure Powershell Command to execute template.
 ```bash
-New-AzResourceGroupDeployment -ResourceGroupName Template-1 -TemplateFile template.json
+New-AzResourceGroupDeployment -ResourceGroupName <Resource Group Name> -TemplateFile template.json
 ```
