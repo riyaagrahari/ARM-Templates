@@ -360,7 +360,7 @@
             }
           },
           {
-            "name": "FTPfromDB-API",
+            "name": "FTPfromDB-API-Outbound",
             "properties": {
               "description": "Rule for accepting FTP connection from Database to API server",
               "protocol": "Tcp",
