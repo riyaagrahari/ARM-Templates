@@ -1,48 +1,61 @@
 {
-	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-	"contentVersion": "1.0.0.0",
-	"parameters": {
-		"Virtual-Network-name": {
-			"type": "String",
-			"metadata": "Name of Virtual Network"
-		},
-		"Virtual-Network-location": {
-			"type": "String",
-			"metadata": "Location of Virtual Network"
-			
-		},
-		"Virtual-Network-addressPrefix": {
-			"type": "String",
-			"metadata": "Address-Prefix of Virtual Network in CIDR format"
-		},
-		"subnetAddressPrefix": {
-			"type": "String",
-			"metadata": "Address-Prefix of Subnet in CIDR format"
-		},
-		"enableDdosProtection_In_VirtualNetwork": {
-			"type": "Bool",
-			"metadata": "DDoS protection allow or deny"
-		}
-	},
-	"resources": [{
-		"type": "Microsoft.Network/virtualNetworks",
-		"apiVersion": "2019-02-01",
-		"name": "[parameters('Virtual-Network-name')]",
-		"location": "[parameters('Virtual-Network-location')]",
-		"properties": {
-			"addressSpace": {
-				"addressPrefixes": [
-					"[parameters('Virtual-Network-addressPrefix')]"
-				]
-			},
-			"subnets": [{
-				"name": "subnet-deploy",
-				"properties": {
-					"addressPrefix": "[parameters('subnetAddressPrefix')]"
-				}
-			}],
-			"enableDdosProtection": "[parameters('enableDdosProtection_In_VirtualNetwork')]"
-		}
-	}],
-	"outputs": {}
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "Virtual-Network-name": {
+      "type": "String",
+      "metadata": {
+        "description": "Name of Virtual Network"
+      }
+    },
+    "Virtual-Network-location": {
+      "type": "String",
+      "metadata": {
+        "description": "Location of Virtual Network"
+      }
+    },
+    "Virtual-Network-addressPrefix": {
+      "type": "String",
+      "metadata": {
+        "description": "Address-Prefix of Virtual Network in CIDR format"
+      }
+    },
+    "subnetAddressPrefix": {
+      "type": "String",
+      "metadata": {
+        "description": "Address-Prefix of Subnet in CIDR format"
+      }
+    },
+    "enableDdosProtection_In_VirtualNetwork": {
+      "type": "Bool",
+      "metadata": {
+        "description": "DDoS protection allow or deny"
+      }
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Network/virtualNetworks",
+      "apiVersion": "2019-02-01",
+      "name": "[parameters('Virtual-Network-name')]",
+      "location": "[parameters('Virtual-Network-location')]",
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "[parameters('Virtual-Network-addressPrefix')]"
+          ]
+        },
+        "subnets": [
+          {
+            "name": "subnet-deploy",
+            "properties": {
+              "addressPrefix": "[parameters('subnetAddressPrefix')]"
+            }
+          }
+        ],
+        "enableDdosProtection": "[parameters('enableDdosProtection_In_VirtualNetwork')]"
+      }
+    }
+  ],
+  "outputs": {}
 }

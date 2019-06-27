@@ -1,21 +1,21 @@
 {
-	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
-	"content-version": "1.0.0.0",
-	"parameters": {
-		"storage_Account_Location": {
-			"value": "westus"
-		},
-		"storage_Account_Name": {
-			"value": "storageaccount1236"
-		},
-		"storage_Account_Type": {
-			"value": "Standard_RAGRS"
-		},
-		"storage_Account_Kind": {
-			"value": "StorageV2"
-		},
-		"storage_Account-access_Tier": {
-			"value": "Hot"
-		}
-	}
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "content-version": "1.0.0.0",
+  "parameters": {
+    "storage_Account_Location": {
+      "value": "westus"
+    },
+    "storage_Account_Name": {
+      "value": "storageaccount1236"
+    },
+    "storage_Account_Type": {
+      "value": "Standard_RAGRS"
+    },
+    "storage_Account_Kind": {
+      "value": "StorageV2"
+    },
+    "storage_Account-access_Tier": {
+      "value": "Hot"
+    }
+  }
 }

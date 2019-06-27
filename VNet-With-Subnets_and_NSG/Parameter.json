@@ -1,51 +1,51 @@
 {
-	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
-	"contentVersion": "1.0.0.0",
-	"parameters": {
-		"Virtual-Network-name": {
-			"value": "Vnet7997"
-		},
-		"Virtual-Network-addressPrefix": {
-			"value": "10.0.0.0/16"
-		},
-		"enableDdosProtection_In_VirtualNetwork": {
-			"value": false
-		},
-		"subnet1_Name": {
-			"value": "Subnet-1"
-		},
-		"subnet2_Name": {
-			"value": "Subnet-2"
-		},
-		"subnet3_Name": {
-			"value": "Subnet-3"
-		},
-		"Admin_Subnet_Name": {
-			"value": "Admin-Subnet"
-		},
-		"Admin_Subnet_AddressPrefix": {
-			"value": "10.0.1.0/24"
-		},
-		"subnet1_AddressPrefix": {
-			"value": "10.0.2.0/24"
-		},
-		"subnet2_AddressPrefix": {
-			"value": "10.0.3.0/24"
-		},
-		"subnet3_AddressPrefix": {
-			"value": "10.0.4.0/24"
-		},
-		"Firewall_AddressPrefix": {
-			"value": "10.0.5.0/24"
-		},
-		"Webserver_NSG_Name": {
-			"value": "NSG_WEB_SERVER"
-		},
-		"API_NSG_Name": {
-			"value": "NSG_API"
-		},
-		"Database_NSG_Name": {
-			"value": "NSG_DATABASE"
-		}
-	}
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "Virtual-Network-name": {
+      "value": "Vnet7997"
+    },
+    "Virtual-Network-addressPrefix": {
+      "value": "10.0.0.0/16"
+    },
+    "enableDdosProtection_In_VirtualNetwork": {
+      "value": false
+    },
+    "subnet1_Name": {
+      "value": "Subnet-1"
+    },
+    "subnet2_Name": {
+      "value": "Subnet-2"
+    },
+    "subnet3_Name": {
+      "value": "Subnet-3"
+    },
+    "Management-JumpBox_Subnet_Name": {
+      "value": "JumpBox-Subnet"
+    },
+    "Management-JumpBox_Subnet_AddressPrefix": {
+      "value": "10.0.1.0/24"
+    },
+    "subnet1_AddressPrefix": {
+      "value": "10.0.2.0/24"
+    },
+    "subnet2_AddressPrefix": {
+      "value": "10.0.3.0/24"
+    },
+    "subnet3_AddressPrefix": {
+      "value": "10.0.4.0/24"
+    },
+    "Firewall_AddressPrefix": {
+      "value": "10.0.5.0/24"
+    },
+    "Webserver_NSG_Name": {
+      "value": "NSG_WEB_SERVER"
+    },
+    "API_NSG_Name": {
+      "value": "NSG_API"
+    },
+    "Database_NSG_Name": {
+      "value": "NSG_DATABASE"
+    }
+  }
 }

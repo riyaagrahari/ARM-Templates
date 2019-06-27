@@ -1,24 +1,24 @@
 {
-	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
-	"content-version": "1.0.0.0",
-	 "parameters": {
-	     "Virtual_Network1_Name": {
-            "value":"VNet1"   
-					},
-		"Virtual_Network2_Name": {
-            "value": "VNet2"
-					},
-		"Allow_Virtual_Network_Access": {
-			"value": true
-				},
-		"Allow_Forwarded_Traffic": {
-			"value": false
-				},
-		"Allow_Gateway_Transit": {
-			"value": false
-				},
-		"Use_Remote_Gateways": {
-			"value": false
-				}
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "content-version": "1.0.0.0",
+  "parameters": {
+    "Virtual_Network1_Name": {
+      "value": "VNet1"
+    },
+    "Virtual_Network2_Name": {
+      "value": "VNet2"
+    },
+    "Allow_Virtual_Network_Access": {
+      "value": true
+    },
+    "Allow_Forwarded_Traffic": {
+      "value": false
+    },
+    "Allow_Gateway_Transit": {
+      "value": false
+    },
+    "Use_Remote_Gateways": {
+      "value": false
     }
+  }
 }

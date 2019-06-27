@@ -1,52 +1,54 @@
 {
-	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
-	"contentVersion": "1.0.0.0",
-	"parameters": {
-		"storage_Account_Name": {
-			"type": "string",
-			"metadata":{
-			"description": "Name of Storage Account"
-			}
-		},
-		"storage_Account_Location": {
-			"type": "string",
-			"metadata":{
-			"description": "Location of Storage Account"
-			}
-		},
-		"storage_Account_Type": {
-			"type": "string",
-			"metadata":{
-			"description": "Type of Storage Account (like Standard_GRS, Standard_LRS etc.)"
-				}
-		},
-		"storage_Account_Kind": {
-			"type": "string",
-			"metadata":{
-			"description": "Kind of Storage Account (like StorageV2)"
-			}
-		},
-		"storage_Account-access_Tier": {
-			"type": "string",
-			"metadata":{
-			"description": "Access-Tier associated to Storage Account- Hot, Cold, Archive"
-			}
-		}
-	},
-	"variables": {},
-	"resources": [{
-		"name": "[parameters('storage_Account_Name')]",
-		"type": "Microsoft.Storage/storageAccounts",
-		"apiVersion": "2018-07-01",
-		"location": "[parameters('storage_Account_location')]",
-		"properties": {
-			"accessTier": "[parameters('storage_Account-access_Tier')]"
-		},
-		"dependsOn": [],
-		"sku": {
-			"name": "[parameters('storage_Account_Type')]"
-		},
-		"kind": "[parameters('storage_Account_Kind')]"
-	}],
-	"outputs": {}
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "storage_Account_Name": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of Storage Account"
+      }
+    },
+    "storage_Account_Location": {
+      "type": "string",
+      "metadata": {
+        "description": "Location of Storage Account"
+      }
+    },
+    "storage_Account_Type": {
+      "type": "string",
+      "metadata": {
+        "description": "Type of Storage Account (like Standard_GRS, Standard_LRS etc.)"
+      }
+    },
+    "storage_Account_Kind": {
+      "type": "string",
+      "metadata": {
+        "description": "Kind of Storage Account (like StorageV2)"
+      }
+    },
+    "storage_Account-access_Tier": {
+      "type": "string",
+      "metadata": {
+        "description": "Access-Tier associated to Storage Account- Hot, Cold, Archive"
+      }
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "name": "[parameters('storage_Account_Name')]",
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2018-07-01",
+      "location": "[parameters('storage_Account_location')]",
+      "properties": {
+        "accessTier": "[parameters('storage_Account-access_Tier')]"
+      },
+      "dependsOn": [],
+      "sku": {
+        "name": "[parameters('storage_Account_Type')]"
+      },
+      "kind": "[parameters('storage_Account_Kind')]"
+    }
+  ],
+  "outputs": {}
 }

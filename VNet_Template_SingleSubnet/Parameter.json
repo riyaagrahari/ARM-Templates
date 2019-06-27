@@ -1,24 +1,24 @@
 {
-	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
-	"contentVersion": "1.0.0.0",
-	"parameters": {
-		"Virtual-Network-name": {
-			"value": "Vnet1"
-			},
-		"Virtual-Network-resourceGroup": {
-			"value": "DeployGroup"
-			},
-		"Virtual-Network-location": {
-			"value": "westus"
-			},
-		"Virtual-Network-addressPrefix": {
-			"value": "10.2.0.0/16"
-			},
-		"subnetAddressPrefix": {
-			"value": "10.2.0.0/24"
-			},
-		"enableDdosProtection_In_VirtualNetwork": {
-			"value": false
-			}
-		}
-	}
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "Virtual-Network-name": {
+      "value": "Vnet1"
+    },
+    "Virtual-Network-resourceGroup": {
+      "value": "DeployGroup"
+    },
+    "Virtual-Network-location": {
+      "value": "westus"
+    },
+    "Virtual-Network-addressPrefix": {
+      "value": "10.2.0.0/16"
+    },
+    "subnetAddressPrefix": {
+      "value": "10.2.0.0/24"
+    },
+    "enableDdosProtection_In_VirtualNetwork": {
+      "value": false
+    }
+  }
+}
