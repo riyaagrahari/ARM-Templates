@@ -216,7 +216,7 @@
               "description": "Rule for SSH and RDP Request to API",
               "protocol": "Tcp",
               "sourcePortRange": "*",
-              "sourceAddressPrefix": "[parameters('Admin_Subnet_AddressPrefix')]",
+              "sourceAddressPrefix": "[parameters('Management-JumpBox_Subnet_AddressPrefix')]",
               "destinationPortRanges": [
                 "22",
                 "3389"
