@@ -2,17 +2,19 @@
   "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "Virtual-Network-name": {
-      "type": "string",
-      "metadata": {
-        "description": "Name of Virtual Network"
-      }
-    },
+   
     "Location": {
       "type": "string",
       "defaultValue": "[resourceGroup().location]",
       "metadata": {
         "description": "Location of all resources"
+      }
+    },
+	 "Virtual-Network-name": {
+      "type": "string",
+	   "defaultValue": "VNET-1",
+      "metadata": {
+        "description": "Name of Virtual Network"
       }
     },
     "Virtual-Network-addressPrefix": {
@@ -24,6 +26,7 @@
     },
     "subnet1_Name": {
       "type": "string",
+	  "defaultValue": "Web-Subnet",
       "metadata": {
         "description": "Name of Subnet 1"
       }
@@ -37,6 +40,7 @@
     },
     "subnet2_Name": {
       "type": "string",
+	  "defaultValue": "DB-Subnet",
       "metadata": {
         "description": "Name of Subnet 2"
       }
@@ -50,6 +54,7 @@
     },
     "subnet3_Name": {
       "type": "string",
+	  "defaultValue": "API-Subnet",
       "metadata": {
         "description": "Name of Subnet 3"
       }
@@ -70,6 +75,7 @@
     },
     "Management-JumpBox_Subnet_Name": {
       "type": "string",
+	  "defaultValue": "JumpBox-Subnet",
       "metadata": {
         "description": "Name of Management-JumpBox Subnet"
       }
@@ -104,6 +110,7 @@
     },
     "enableDdosProtection_In_VirtualNetwork": {
       "type": "bool",
+	  "defaultValue": false,
       "metadata": {
         "description": "DDoS protection allow or deny"
       }
