@@ -17,7 +17,7 @@
     },
     "Virtual-Network-addressPrefix": {
       "type": "string",
-	  "defaultValue": "10.0.0.0/16"
+      "defaultValue": "10.0.0.0/16",
       "metadata": {
         "description": "Address-Prefix of Virtual Network in CIDR format"
       }
@@ -30,7 +30,7 @@
     },
     "subnet1_AddressPrefix": {
       "type": "string",
-	  "defaultValue": "10.0.1.0/24",
+      "defaultValue": "10.0.1.0/24",
       "metadata": {
         "description": "Address-Prefix of Subnet 1 in CIDR format"
       }
@@ -43,7 +43,7 @@
     },
     "subnet2_AddressPrefix": {
       "type": "string",
-	  "defaultValue": "10.0.2.0/24",
+      "defaultValue": "10.0.2.0/24",
       "metadata": {
         "description": "Address-Prefix of Subnet 2 in CIDR format"
       }
@@ -56,14 +56,14 @@
     },
     "subnet3_AddressPrefix": {
       "type": "string",
-	  "defaultValue": "10.0.3.0/24",
+      "defaultValue": "10.0.3.0/24",
       "metadata": {
         "description": "Address-Prefix of Subnet 3 in CIDR format"
       }
     },
     "Firewall_AddressPrefix": {
       "type": "string",
-	  "defaultValue": "10.0.4.0/24",
+      "defaultValue": "10.0.4.0/24",
       "metadata": {
         "description": "Address-Prefix of firewall in CIDR format"
       }
@@ -76,28 +76,28 @@
     },
     "Management-JumpBox_Subnet_AddressPrefix": {
       "type": "string",
-	  "defaultValue": "10.0.5.0/24",
+      "defaultValue": "10.0.5.0/24",
       "metadata": {
         "description": "Address-Prefix of Management-JumpBox Subnet  in CIDR format"
       }
     },
     "Webserver_NSG_Name": {
       "type": "string",
-	  "defaultValue": "Web-NSG",
+      "defaultValue": "Web-NSG",
       "metadata": {
         "description": "Name of Network Security Group for Web server"
       }
     },
     "API_NSG_Name": {
       "type": "string",
-	  "defaultValue": "API-NSG",
+      "defaultValue": "API-NSG",
       "metadata": {
         "description": "Name of Network Security Group for API"
       }
     },
     "Database_NSG_Name": {
       "type": "string",
-	  "defaultValue": "Database-NSG",
+      "defaultValue": "Database-NSG",
       "metadata": {
         "description": "Name of Network Security Group for Database"
       }
@@ -141,7 +141,10 @@
               "protocol": "Tcp",
               "sourcePortRange": "*",
               "sourceAddressPrefix": "[parameters('Management-JumpBox_Subnet_AddressPrefix')]",
-              "destinationPortRanges": ["22","3389"],
+              "destinationPortRanges": [
+                "22",
+                "3389"
+              ],
               "destinationAddressPrefix": "[parameters('subnet1_AddressPrefix')]",
               "access": "Allow",
               "priority": 110,
@@ -207,7 +210,10 @@
               "protocol": "Tcp",
               "sourcePortRange": "*",
               "sourceAddressPrefix": "[parameters('Admin_Subnet_AddressPrefix')]",
-              "destinationPortRanges": ["22","3389"],
+              "destinationPortRanges": [
+                "22",
+                "3389"
+              ],
               "destinationAddressPrefix": "[parameters('subnet2_AddressPrefix')]",
               "access": "Allow",
               "priority": 110,
@@ -315,7 +321,10 @@
               "protocol": "Tcp",
               "sourcePortRange": "*",
               "sourceAddressPrefix": "[parameters('Management-JumpBox_Subnet_AddressPrefix')]",
-              "destinationPortRanges": ["22","3389"]
+              "destinationPortRanges": [
+                "22",
+                "3389"
+              ],
               "destinationAddressPrefix": "[parameters('subnet3_AddressPrefix')]",
               "access": "Allow",
               "priority": 120,
