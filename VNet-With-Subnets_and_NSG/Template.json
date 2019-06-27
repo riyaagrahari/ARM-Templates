@@ -287,7 +287,7 @@
       "properties": {
         "securityRules": [
           {
-            "name": "API-MySQL-request",
+            "name": "API-DB-request",
             "properties": {
               "description": "Rule for accepting MySQL request from API",
               "protocol": "Tcp",
