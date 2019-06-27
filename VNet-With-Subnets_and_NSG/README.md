@@ -37,13 +37,14 @@ Deployment of virtual machine needs to be done by the user using the template. T
 ```bash
 az group deployment create --resource-group <Resource Group Name> --template-file template.json
 ```
+
 ### 3. Azure Powershell Commands
 <br />
 <a href="https://shell.azure.com" target="_blank">
  <img name="launch-cloud-shell" src="https://docs.microsoft.com/azure/includes/media/cloud-shell-try-it/launchcloudshell.png" data-linktype="external">
 </a></br>
 - Click on the Launch Cloud Shell button, login with Azure credentials and you will be redirected to powershell portal.
-- Upload template file using upload option, change current directory to home directory of azure user as it is default folder for storing uploaded files(use cd).<br />
+- Upload template file using upload option, change current directory to home directory of azure user as it is default folder for storing   uploaded files(use cd).<br />
 - Use following Azure Powershell Command to execute template.
 ```bash
 New-AzResourceGroupDeployment -ResourceGroupName <Resource Group Name> -TemplateFile template.json
