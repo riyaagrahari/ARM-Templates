@@ -23,6 +23,9 @@
 		"Management-JumpBox_Subnet_AddressPrefix": {
 			"type": "string"
 		},
+		"Management-JumpBox_Subnet_Name": {
+			"type": "string"
+		},
 		"firewallSubnet-AddressPrefix":{"type": "string"},
 		"enableDdosProtection":{
 			"type": "bool"

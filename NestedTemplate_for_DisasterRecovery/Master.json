@@ -229,7 +229,7 @@
 					"subnet3-AddressPrefix-Vnet2": {
 						"value": "[parameters('subnet3-AddressPrefix-Vnet2')]"
 					},
-					
+
 					"Management-JumpBox_Subnet_AddressPrefix": {
 						"value": "[parameters('Management-JumpBox_Subnet_AddressPrefix')]"
 					},
@@ -297,7 +297,7 @@
 					},
 					"Management-JumpBox_Subnet_Name": {
 						"value": "[parameters('Management-JumpBox_Subnet_Name')]"
-					}
+					},
 					"Management-JumpBox_Subnet_AddressPrefix": {
 						"value": "[parameters('Management-JumpBox_Subnet_AddressPrefix')]"
 					},
@@ -363,7 +363,7 @@
 					},
 					"Management-JumpBox_Subnet_Name": {
 						"value": "[parameters('Management-JumpBox_Subnet_Name-Vnet2')]"
-					}
+					},
 					"Management-JumpBox_Subnet_AddressPrefix": {
 						"value": "[parameters('Management-JumpBox_Subnet_AddressPrefix-Vnet2')]"
 					},
