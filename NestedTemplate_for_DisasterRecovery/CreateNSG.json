@@ -238,7 +238,7 @@
 							"sourcePortRange": "*",
 							"destinationPortRange": "*",
 							"sourceAddressPrefix": ["[parameters('subnet1-AddressPrefix')]", "[parameters('subnet1-AddressPrefix-Vnet2')]"],
-							"destinationAddressPrefix": ["[parameters('subnet3-AddressPrefix')]", "[parameters(s'subnet3-AddressPrefix-Vnet2')]"],
+							"destinationAddressPrefix": ["[parameters('subnet3-AddressPrefix')]", "[parameters('subnet3-AddressPrefix-Vnet2')]"],
 							"access": "Deny",
 							"priority": 110,
 							"direction": "Inbound"
