@@ -201,7 +201,7 @@
 			"properties": {
 				"mode": "Incremental",
 				"templateLink": {
-					"uri": "https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Nested_Templates_for_DisasterRecovery/Creation%20of%20Two%20Vnets%20and%20peering/NSGcreation.json",
+					"uri": "https://raw.githubusercontent.com/riyaagrahari/ARM-Templates/master/NestedTemplate_for_DisasterRecovery/CreateNSG.json",
 					"contentVersion": "1.0.0.0"
 				},
 				"parameters": {
@@ -250,7 +250,7 @@
 			"properties": {
 				"mode": "Incremental",
 				"templateLink": {
-					"uri": "https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Nested%20Templates/Creation%20of%20Two%20Vnets%20and%20peering/Vnet.json",
+					"uri": "https://raw.githubusercontent.com/riyaagrahari/ARM-Templates/master/NestedTemplate_for_DisasterRecovery/VnetTemplate.json",
 					"contentVersion": "1.0.0.0"
 				},
 				"parameters": {
@@ -311,7 +311,7 @@
 			"properties": {
 				"mode": "Incremental",
 				"templateLink": {
-					"uri": "https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Nested%20Templates/Creation%20of%20Two%20Vnets%20and%20peering/Vnet.json",
+					"uri": "https://raw.githubusercontent.com/riyaagrahari/ARM-Templates/master/NestedTemplate_for_DisasterRecovery/VnetTemplate.json",
 					"contentVersion": "1.0.0.0"
 				},
 				"parameters": {
@@ -369,26 +369,26 @@
 			"properties": {
 				"mode": "Incremental",
 				"templateLink": {
-					"uri": "https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Vnet%20Peering/template3.json",
+					"uri": "https://raw.githubusercontent.com/riyaagrahari/ARM-Templates/master/Vnet_Peering_Template/Template.json",
 					"contentVersion": "1.0.0.0"
 				},
 				"parameters": {
-					"Virtual_Network1-name": {
+					"Virtual_Network1_name": {
 						"value": "[parameters('Virtual_Network1-name')]"
 					},
-					"Virtual_Network2-name": {
-						"value": "[parameters('Virtual_Network2-name')]"
+					"Virtual_Network2_name": {
+						"value":s "[parameters('Virtual_Network2-name')]"
 					},
-					"virtualNetworkAccess": {
+					"Allow_Virtual_Network_Access": {
 						"value": "[parameters('virtual-Network-Access')]"
 					},
-					"forwardedTraffic": {
+					"Allow_Forwarded_Traffic": {
 						"value": "[parameters('forwarded-Traffic')]"
 					},
-					"gatewayTransit": {
+					"Allow_Gateway_Transit": {
 						"value": "[parameters('gateway-Transit')]"
 					},
-					"RemoteGateways": {
+					"Use_Remote_Gateways": {
 						"value": "[parameters('remoteGateways')]"
 					}
 
