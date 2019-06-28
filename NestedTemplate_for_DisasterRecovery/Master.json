@@ -156,6 +156,25 @@
 				"description": "Name of third security group"
 			}
 		},
+		"NSG1-name-replica": {
+			"type": "string",
+			"metadata": {
+				"description": "Name of first security group"
+			}
+		},
+		"NSG2-name-replica": {
+			"type": "string",
+			"metadata": {
+				"description": "Name of second security group"
+			}
+		},
+		"NSG3-name-replica": {
+			"type": "string",
+			"metadata": {
+				"description": "Name of third security group"
+			}
+		},
+		
 		"enableDdosProtection": {
 			"type": "bool"
 		},
@@ -308,13 +327,66 @@
 			}
 
 		},
+		{
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-05-01",
+			"name": "LinkedTemplate5",
+			"properties": {
+				"mode": "Incremental",
+				"templateLink": {
+					"uri": "https://raw.githubusercontent.com/riyaagrahari/ARM-Templates/master/NestedTemplate_for_DisasterRecovery/CreateNSG.json",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"Location": {
+						"value": "[parameters('Location-of-Virtual_Network2')]"
+					},
+					"NSG1-name": {
+						"value": "[parameters('NSG1-name-replica')]"
+					},
+					"NSG2-name": {
+						"value": "[parameters('NSG2-name-replica')]"
+					},
+					"NSG3-name": {
+						"value": "[parameters('NSG3-name-replica')]"
+					},
+					"subnet1-AddressPrefix": {
+						"value": "[parameters('subnet1-AddressPrefix')]"
+					},
+					"subnet2-AddressPrefix": {
+						"value": "[parameters('subnet2-AddressPrefix')]"
+					},
+					"subnet3-AddressPrefix": {
+						"value": "[parameters('subnet3-AddressPrefix')]"
+					},
+					"subnet1-AddressPrefix-Vnet2": {
+						"value": "[parameters('subnet1-AddressPrefix-Vnet2')]"
+					},
+					"subnet2-AddressPrefix-Vnet2": {
+						"value": "[parameters('subnet2-AddressPrefix-Vnet2')]"
+					},
+					"subnet3-AddressPrefix-Vnet2": {
+						"value": "[parameters('subnet3-AddressPrefix-Vnet2')]"
+					},
 
+					"Management-JumpBox_Subnet_AddressPrefix": {
+						"value": "[parameters('Management-JumpBox_Subnet_AddressPrefix')]"
+					},
+					"Management-JumpBox_Subnet_AddressPrefix-Vnet2": {
+						"value": "[parameters('Management-JumpBox_Subnet_AddressPrefix-Vnet2')]"
+					}
+
+
+
+				}
+			}
+		},
 
 		{
 			"type": "Microsoft.Resources/deployments",
 			"apiVersion": "2018-05-01",
 			"name": "LinkedTemplate3",
-			"dependsOn": ["LinkedTemplate1", "LinkedTemplate2"],
+			"dependsOn": ["LinkedTemplate1","LinkedTemplate5"],
 			"properties": {
 				"mode": "Incremental",
 				"templateLink": {
