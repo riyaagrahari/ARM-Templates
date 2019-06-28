@@ -4,7 +4,6 @@
 	"parameters": {
 		"Location-of-Virtual_Network1": {
 			"type": "string"
-			"defaultValuev":"[resourceGroup().location]" 
 		},
 		"Virtual_Network1-name": {
 			"type": "string",
@@ -295,6 +294,9 @@
 					"firewallSubnet-AddressPrefix": {
 						"value": "[parameters('firewallSubnet-AddressPrefix-Vnet1')]"
 					},
+					"Management-JumpBox_Subnet_AddressPrefix":{
+						"value": "[parameters('Management-JumpBox_Subnet_AddressPrefix')]"
+					}
 					"enableDdosProtection": {
 						"value": "[parameters('enableDdosProtection')]"
 					}
@@ -355,6 +357,9 @@
 					"firewallSubnet-AddressPrefix": {
 						"value": "[parameters('firewallSubnet-AddressPrefix-Vnet2')]"
 					},
+					"Management-JumpBox_Subnet_AddressPrefix":{
+						"value": "[parameters('Management-JumpBox_Subnet_AddressPrefix-Vnet2')]"
+					}
 					"enableDdosProtection": {
 						"value": "[parameters('enableDdosProtection')]"
 					}
