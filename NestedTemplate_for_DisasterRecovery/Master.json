@@ -377,7 +377,7 @@
 						"value": "[parameters('Virtual_Network1-name')]"
 					},
 					"Virtual_Network2_name": {
-						"value":s "[parameters('Virtual_Network2-name')]"
+						"value": "[parameters('Virtual_Network2-name')]"
 					},
 					"Allow_Virtual_Network_Access": {
 						"value": "[parameters('virtual-Network-Access')]"
