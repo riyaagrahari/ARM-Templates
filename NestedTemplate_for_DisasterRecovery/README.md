@@ -2,6 +2,8 @@
 
 Web-API-Database is a 3 tier architecture which decouples to presentation, business or application and database layers induvidually. The business layer exposes its API to applications as well as for the remote presentation layer. Remote presentation layer uses REST API. There is a internal database API for communications between application layer and database layer. REST API’s input is processed by the application layer to perform CRUD operations on the database.
 
+![WEB-API-DB](https://user-images.githubusercontent.com/24872414/60339998-005b4080-99c8-11e9-8ae3-8074282a2b7c.jpeg)
+
 This template creates a Virtual Network with 3 subnets (Webserver, API, Database). Further, Network Security Group are created for each and Inbound, Outbound rules are added to their respective NSG.
 For default values , you may refer to [`Parameter.json`](https://github.com/riyaagrahari/ARM-Templates/blob/master/VNet_Template_MultipleSubnet/Parameter.json) file.
 
@@ -9,7 +11,8 @@ Below is the Architectural Diagram for the setup which will be made. Vnets and s
 Deployment of virtual machine needs to be done by the user using the template. This template creates the resources upto sub-netowrk level.
 
 
-![Azure-Virtual-Network-Within-VNet](https://user-images.githubusercontent.com/24872414/60295360-27226400-9941-11e9-988e-90b1086dc61a.jpg)
+![Azure Virtual Network Within VNet (11)](https://user-images.githubusercontent.com/24872414/60339888-aeb2b600-99c7-11e9-93a8-485b388ca404.jpg)
+
 
 
 ## Three ways of execution:
