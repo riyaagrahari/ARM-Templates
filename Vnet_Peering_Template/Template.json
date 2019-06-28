@@ -68,7 +68,7 @@
         "allowGatewayTransit": "[parameters('Allow_Gateway_Transit')]",
         "useRemoteGateways": "[parameters('Use_Remote_Gateways')]",
         "remoteVirtualNetwork": {
-          "id": "[resourceId('Microsoft.Network/virtualNetworks',parameters('Virtual_Network2_Name'))]"
+          "id": "[resourceId('Microsoft.Network/virtualNetworks',parameters('Virtual_Network1_Name'))]"
         }
       }
     }
