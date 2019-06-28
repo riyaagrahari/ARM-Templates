@@ -18,8 +18,8 @@
 		"subnet2-name":{"type": "string"},
 		"subnet3-name":{"type": "string"},
 		"subnet1-AddressPrefix":{"type": "string"},
-		"subnet2-AddressPrefix2":{"type": "string"},
-		"subnet3-AddressPrefix3":{"type": "string"},
+		"subnet2-AddressPrefix":{"type": "string"},
+		"subnet3-AddressPrefix":{"type": "string"},
 		"firewallSubnet-AddressPrefix":{"type": "string"},
 		"enableDdosProtection":{
 			"type": "bool"

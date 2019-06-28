@@ -12,16 +12,7 @@
 				"description": "Name of First Virtual Network"
 			}
 		},
-		"Location-of-Virtual_Network2": {
-			"type": "string"
-		},
-		"Virtual_Network2-name": {
-			"type": "string",
-			"metadata": {
-
-				"description": "Name of Second Virtual Network"
-			}
-		},
+	
 
 		"Vnet1addressPrefix": {
 			"type": "string",
@@ -78,7 +69,7 @@
 				"description": "Address range for third subnet"
 			}
 		},
-		"Virtual_Network2-name-name": {
+		"Virtual_Network2-name": {
 			"type": "string",
 			"metadata": {
 
@@ -92,6 +83,9 @@
 			"metadata": {
 				"description": "Address range for the Vnet2."
 			}
+		},
+		"Location-of-Virtual_Network2": {
+			"type": "string"
 		},
 
 		"subnet1-Name-Vnet2": {
@@ -205,7 +199,7 @@
 					"contentVersion": "1.0.0.0"
 				},
 				"parameters": {
-					"location": {
+					"Location": {
 						"value": "[parameters('Location-of-Virtual_Network1')]"
 					},
 					"NSG1-name": {
@@ -254,10 +248,10 @@
 					"contentVersion": "1.0.0.0"
 				},
 				"parameters": {
-					"vnet": {
+					"Virtual_Network1-name": {
 						"value": "[parameters('Virtual_Network1-name')]"
 					},
-					"location": {
+					"Location-of-Virtual_Network1": {
 						"value": "[parameters('Location-of-Virtual_Network1')]"
 					},
 					"NSG1-name": {
@@ -287,11 +281,11 @@
 					"subnet3-AddressPrefix": {
 						"value": "[parameters('subnet3-AddressPrefix')]"
 					},
-					"addressPrefix": {
+					"Vnet1addressPrefix": {
 						"value": "[parameters('Vnet1addressPrefix')]"
 					},
 
-					"firewallSubnet": {
+					"firewallSubnet-AddressPrefix-Vnet1": {
 						"value": "[parameters('firewallSubnet-AddressPrefix-Vnet1')]"
 					},
 					"enableDdosProtection": {
@@ -315,22 +309,22 @@
 					"contentVersion": "1.0.0.0"
 				},
 				"parameters": {
-					"vnet": {
+					"Virtual_Network2-name": {
 						"value": "[parameters('Virtual_Network2-name')]"
 					},
-					"addressPrefix": {
+					"Vnet2addressPrefix": {
 						"value": "[parameters('Vnet2addressPrefix')]"
 					},
-					"location": {
+					"Location-of-Virtual_Network2": {
 						"value": "[parameters('Location-of-Virtual_Network2')]"
 					},
-					"subnet1-name": {
+					"subnet1-Name-Vnet2": {
 						"value": "[parameters('subnet1-Name-Vnet2')]"
 					},
-					"subnet2-name": {
+					"subnet2-Name-Vnet2": {
 						"value": "[parameters('subnet2-Name-Vnet2')]"
 					},
-					"subnet3-name": {
+					"subnet3-Name-Vnet2": {
 						"value": "[parameters('subnet3-Name-Vnet2')]"
 					},
 					"NSG1-name": {
@@ -342,16 +336,16 @@
 					"NSG3-name": {
 						"value": "[parameters('NSG3-name')]"
 					},
-					"subnet1-AddressPrefix": {
+					"subnet1-AddressPrefix-Vnet2": {
 						"value": "[parameters('subnet1-AddressPrefix-Vnet2')]"
 					},
-					"subnet2-AddressPrefix": {
+					"subnet2-AddressPrefix-Vnet2": {
 						"value": "[parameters('subnet2-AddressPrefix-Vnet2')]"
 					},
-					"subnet3-AddressPrefix": {
+					"subnet3-AddressPrefix-Vnet2": {
 						"value": "[parameters('subnet3-AddressPrefix-Vnet2')]"
 					},
-					"firewallSubnet": {
+					"firewallSubnet-AddressPrefix-Vnet2": {
 						"value": "[parameters('firewallSubnet-AddressPrefix-Vnet2')]"
 					},
 					"enableDdosProtection": {
