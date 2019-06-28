@@ -228,6 +228,12 @@
 					},
 					"subnet3-AddressPrefix-Vnet2": {
 						"value": "[parameters('subnet3-AddressPrefix-Vnet2')]"
+					},
+					"Management-JumpBox_Subnet_AddressPrefix":{
+						"value": "[parameters('Management-JumpBox_Subnet_AddressPrefix')]"
+					},
+					"Management-JumpBox_Subnet_AddressPrefix-Vnet2":{
+						"value": "[parameters('Management-JumpBox_Subnet_AddressPrefix-Vnet2')]"
 					}
 
 
@@ -309,22 +315,22 @@
 					"contentVersion": "1.0.0.0"
 				},
 				"parameters": {
-					"Virtual_Network2-name": {
+					"Virtual_Network1-name": {
 						"value": "[parameters('Virtual_Network2-name')]"
 					},
-					"Vnet2addressPrefix": {
+					"Vnet1addressPrefix": {
 						"value": "[parameters('Vnet2addressPrefix')]"
 					},
 					"Location": {
 						"value": "[parameters('Location-of-Virtual_Network2')]"
 					},
-					"subnet1-Name-Vnet2": {
+					"subnet1-Name": {
 						"value": "[parameters('subnet1-Name-Vnet2')]"
 					},
-					"subnet2-Name-Vnet2": {
+					"subnet2-Name": {
 						"value": "[parameters('subnet2-Name-Vnet2')]"
 					},
-					"subnet3-Name-Vnet2": {
+					"subnet3-Name": {
 						"value": "[parameters('subnet3-Name-Vnet2')]"
 					},
 					"NSG1-name": {
@@ -336,13 +342,13 @@
 					"NSG3-name": {
 						"value": "[parameters('NSG3-name')]"
 					},
-					"subnet1-AddressPrefix-Vnet2": {
+					"subnet1-AddressPrefix": {
 						"value": "[parameters('subnet1-AddressPrefix-Vnet2')]"
 					},
-					"subnet2-AddressPrefix-Vnet2": {
+					"subnet2-AddressPrefix": {
 						"value": "[parameters('subnet2-AddressPrefix-Vnet2')]"
 					},
-					"subnet3-AddressPrefix-Vnet2": {
+					"subnet3-AddressPrefix": {
 						"value": "[parameters('subnet3-AddressPrefix-Vnet2')]"
 					},
 					"firewallSubnet-AddressPrefix": {
