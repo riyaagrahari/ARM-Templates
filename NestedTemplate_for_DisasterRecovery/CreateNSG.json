@@ -60,7 +60,7 @@
 								"80",
 								"443"
 							],
-							"destinationAddressPrefix": ["[parameters('subnet1-AddressPrefix')]", "[parameters('subnet1-AddressPrefix-Vnet2')]"],
+							"destinationAddressPrefixes": ["[parameters('subnet1-AddressPrefix')]", "[parameters('subnet1-AddressPrefix-Vnet2')]"],
 							"access": "Allow",
 							"priority": 100,
 							"direction": "Inbound"
@@ -72,12 +72,12 @@
 							"description": "Rule for SSH and RDP Request",
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
-							"sourceAddressPrefix": ["[parameters('Management-JumpBox_Subnet_AddressPrefix')]", "[parameters('Management-JumpBox_Subnet_AddressPrefix-Vnet2')]"],
+							"sourceAddressPrefixes": ["[parameters('Management-JumpBox_Subnet_AddressPrefix')]", "[parameters('Management-JumpBox_Subnet_AddressPrefix-Vnet2')]"],
 							"destinationPortRanges": [
 								"22",
 								"3389"
 							],
-							"destinationAddressPrefix": ["[parameters('subnet1-AddressPrefix')]", "[parameters('subnet1-AddressPrefix-Vnet2')]"],
+							"destinationAddressPrefixes": ["[parameters('subnet1-AddressPrefix')]", "[parameters('subnet1-AddressPrefix-Vnet2')]"],
 							"access": "Allow",
 							"priority": 110,
 							"direction": "Inbound"
@@ -91,7 +91,7 @@
 							"sourcePortRange": "*",
 							"sourceAddressPrefix": "*",
 							"destinationPortRange": "*",
-							"destinationAddressPrefix": ["[parameters('subnet3-AddressPrefix')]", "[parameters('subnet3-AddressPrefix-Vnet2')]"],
+							"destinationAddressPrefixes": ["[parameters('subnet3-AddressPrefix')]", "[parameters('subnet3-AddressPrefix-Vnet2')]"],
 							"access": "Deny",
 							"priority": 100,
 							"direction": "Outbound"
@@ -103,9 +103,9 @@
 							"description": "Rule for accepting response from API Server",
 							"protocol": "Tcp",
 							"sourcePortRange": "8083",
-							"sourceAddressPrefix": ["[parameters('subnet1-AddressPrefix')]", "[parameters('subnet1-AddressPrefix-Vnet2')]"],
+							"sourceAddressPrefixes": ["[parameters('subnet1-AddressPrefix')]", "[parameters('subnet1-AddressPrefix-Vnet2')]"],
 							"destinationPortRange": "8081",
-							"destinationAddressPrefix": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
+							"destinationAddressPrefixes": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
 							"access": "Allow",
 							"priority": 110,
 							"direction": "Outbound"
@@ -126,9 +126,9 @@
 							"description": "Rule for accepting requests from WEB to API ",
 							"protocol": "Tcp",
 							"sourcePortRange": "8083",
-							"sourceAddressPrefix": ["[parameters('subnet1-AddressPrefix')]", "[parameters('subnet1-AddressPrefix-Vnet2')]"],
+							"sourceAddressPrefixes": ["[parameters('subnet1-AddressPrefix')]", "[parameters('subnet1-AddressPrefix-Vnet2')]"],
 							"destinationPortRange": "8081",
-							"destinationAddressPrefix": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
+							"destinationAddressPrefixes": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
 							"access": "Allow",
 							"priority": 100,
 							"direction": "Inbound"
@@ -140,12 +140,12 @@
 							"description": "Rule for SSH and RDP Request to API",
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
-							"sourceAddressPrefix": ["[parameters('Management-JumpBox_Subnet_AddressPrefix')]", "[parameters('Management-JumpBox_Subnet_AddressPrefix-Vnet2')]"],
+							"sourceAddressPrefixes": ["[parameters('Management-JumpBox_Subnet_AddressPrefix')]", "[parameters('Management-JumpBox_Subnet_AddressPrefix-Vnet2')]"],
 							"destinationPortRanges": [
 								"22",
 								"3389"
 							],
-							"destinationAddressPrefix": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
+							"destinationAddressPrefixes": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
 							"access": "Allow",
 							"priority": 110,
 							"direction": "Inbound"
@@ -157,9 +157,9 @@
 							"description": "Rule for accepting FTP requests from Database to API server",
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
-							"sourceAddressPrefix": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
+							"sourceAddressPrefixes": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
 							"destinationPortRange": "21",
-							"destinationAddressPrefix": ["[parameters('subnet3-AddressPrefix')]", "[parameters('subnet3-AddressPrefix-Vnet2')]"],
+							"destinationAddressPrefixes": ["[parameters('subnet3-AddressPrefix')]", "[parameters('subnet3-AddressPrefix-Vnet2')]"],
 							"access": "Allow",
 							"priority": 120,
 							"direction": "Inbound"
@@ -171,9 +171,9 @@
 							"description": "Rule for MySQL request",
 							"protocol": "Tcp",
 							"sourcePortRange": "118",
-							"sourceAddressPrefix": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
+							"sourceAddressPrefixes": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
 							"destinationPortRange": "3306",
-							"destinationAddressPrefix": ["[parameters('subnet3-AddressPrefix')]", "[parameters('subnet3-AddressPrefix-Vnet2')]"],
+							"destinationAddressPrefixes": ["[parameters('subnet3-AddressPrefix')]", "[parameters('subnet3-AddressPrefix-Vnet2')]"],
 							"access": "Allow",
 							"priority": 100,
 							"direction": "Outbound"
@@ -185,9 +185,9 @@
 							"description": "Rule for sending response from API - WEB",
 							"protocol": "Tcp",
 							"sourcePortRange": "8081",
-							"sourceAddressPrefix": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
+							"sourceAddressPrefixes": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
 							"destinationPortRange": "8083",
-							"destinationAddressPrefix": ["[parameters('subnet1-AddressPrefix')]", "[parameters('subnet1-AddressPrefix-Vnet2')]"],
+							"destinationAddressPrefixes": ["[parameters('subnet1-AddressPrefix')]", "[parameters('subnet1-AddressPrefix-Vnet2')]"],
 							"access": "Allow",
 							"priority": 110,
 							"direction": "Outbound"
@@ -199,9 +199,9 @@
 							"description": "Rule for making FTP connection from API to Database server",
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
-							"sourceAddressPrefix": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
+							"sourceAddressPrefixes": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
 							"destinationPortRange": "21",
-							"destinationAddressPrefix": ["[parameters('subnet3-AddressPrefix')]", "[parameters('subnet3-AddressPrefix-Vnet2')]"],
+							"destinationAddressPrefixes": ["[parameters('subnet3-AddressPrefix')]", "[parameters('subnet3-AddressPrefix-Vnet2')]"],
 							"access": "Allow",
 							"priority": 120,
 							"direction": "Outbound"
@@ -222,9 +222,9 @@
 							"description": "Rule for accepting MySQL request from API",
 							"protocol": "Tcp",
 							"sourcePortRange": "118",
-							"sourceAddressPrefix": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
+							"sourceAddressPrefixes": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
 							"destinationPortRange": "3306",
-							"destinationAddressPrefix": ["[parameters('subnet3-AddressPrefix')]", "[parameters('subnet3-AddressPrefix-Vnet2')]"],
+							"destinationAddressPrefixes": ["[parameters('subnet3-AddressPrefix')]", "[parameters('subnet3-AddressPrefix-Vnet2')]"],
 							"access": "Allow",
 							"priority": 100,
 							"direction": "Inbound"
@@ -237,8 +237,8 @@
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
 							"destinationPortRange": "*",
-							"sourceAddressPrefix": ["[parameters('subnet1-AddressPrefix')]", "[parameters('subnet1-AddressPrefix-Vnet2')]"],
-							"destinationAddressPrefix": ["[parameters('subnet3-AddressPrefix')]", "[parameters('subnet3-AddressPrefix-Vnet2')]"],
+							"sourceAddressPrefixes": ["[parameters('subnet1-AddressPrefix')]", "[parameters('subnet1-AddressPrefix-Vnet2')]"],
+							"destinationAddressPrefixes": ["[parameters('subnet3-AddressPrefix')]", "[parameters('subnet3-AddressPrefix-Vnet2')]"],
 							"access": "Deny",
 							"priority": 110,
 							"direction": "Inbound"
@@ -250,12 +250,12 @@
 							"description": "Rule for SSH Request",
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
-							"sourceAddressPrefix": ["[parameters('Management-JumpBox_Subnet_AddressPrefix')]", "[parameters('Management-JumpBox_Subnet_AddressPrefix-Vnet2')]"],
+							"sourceAddressPrefixes": ["[parameters('Management-JumpBox_Subnet_AddressPrefix')]", "[parameters('Management-JumpBox_Subnet_AddressPrefix-Vnet2')]"],
 							"destinationPortRanges": [
 								"22",
 								"3389"
 							],
-							"destinationAddressPrefix": ["[parameters('subnet3-AddressPrefix')]", "[parameters('subnet3-AddressPrefix-Vnet2')]"],
+							"destinationAddressPrefixes": ["[parameters('subnet3-AddressPrefix')]", "[parameters('subnet3-AddressPrefix-Vnet2')]"],
 							"access": "Allow",
 							"priority": 120,
 							"direction": "Inbound"
@@ -267,9 +267,9 @@
 							"description": "Rule for making FTP connection from Database to API server",
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
-							"sourceAddressPrefix": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
+							"sourceAddressPrefixes": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
 							"destinationPortRange": "21",
-							"destinationAddressPrefix": ["[parameters('subnet3-AddressPrefix')]", "[parameters('subnet3-AddressPrefix-Vnet2')]"],
+							"destinationAddressPrefixes": ["[parameters('subnet3-AddressPrefix')]", "[parameters('subnet3-AddressPrefix-Vnet2')]"],
 							"access": "Allow",
 							"priority": 130,
 							"direction": "Inbound"
@@ -281,9 +281,9 @@
 							"description": "Rule for MySQL response to API-server",
 							"protocol": "Tcp",
 							"sourcePortRange": "3306",
-							"sourceAddressPrefix": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
+							"sourceAddressPrefixes": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
 							"destinationPortRange": "118",
-							"destinationAddressPrefix": ["[parameters('subnet3-AddressPrefix')]", "[parameters('subnet3-AddressPrefix-Vnet2')]"],
+							"destinationAddressPrefixes": ["[parameters('subnet3-AddressPrefix')]", "[parameters('subnet3-AddressPrefix-Vnet2')]"],
 							"access": "Allow",
 							"priority": 100,
 							"direction": "Outbound"
@@ -295,9 +295,9 @@
 							"description": "Rule for accepting FTP connection from Database to API server",
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
-							"sourceAddressPrefix": ["[parameters('subnet3-AddressPrefix')]", "[parameters('subnet3-AddressPrefix-Vnet2')]"],
+							"sourceAddressPrefixes": ["[parameters('subnet3-AddressPrefix')]", "[parameters('subnet3-AddressPrefix-Vnet2')]"],
 							"destinationPortRange": "21",
-							"destinationAddressPrefix": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
+							"destinationAddressPrefixes": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
 							"access": "Allow",
 							"priority": 110,
 							"direction": "Outbound"
