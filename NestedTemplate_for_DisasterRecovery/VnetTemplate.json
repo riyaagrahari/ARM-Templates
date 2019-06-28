@@ -20,6 +20,9 @@
 		"subnet1-AddressPrefix":{"type": "string"},
 		"subnet2-AddressPrefix":{"type": "string"},
 		"subnet3-AddressPrefix":{"type": "string"},
+		"Management-JumpBox_Subnet_AddressPrefix": {
+			"type": "string"
+		},
 		"firewallSubnet-AddressPrefix":{"type": "string"},
 		"enableDdosProtection":{
 			"type": "bool"
@@ -77,6 +80,16 @@
 
 
 					},
+					{
+						"name": "[parameters('Management-JumpBox_Subnet_Name')]",
+
+						"properties": {
+							"addressPrefix": "[parameters('Management-JumpBox_Subnet_AddressPrefix')]",
+							
+						}
+
+					},
+					
 					{
 						"name": "AzureFirewallSubnet",
 

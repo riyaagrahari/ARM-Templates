@@ -4,6 +4,7 @@
 	"parameters": {
 		"Location-of-Virtual_Network1": {
 			"type": "string"
+			"defaultValuev":"[resourceGroup().location]" 
 		},
 		"Virtual_Network1-name": {
 			"type": "string",
