@@ -307,7 +307,7 @@
 			"type": "Microsoft.Resources/deployments",
 			"apiVersion": "2018-05-01",
 			"name": "LinkedTemplate3",
-			"dependsOn": ["LinkedTemplate1"],
+			"dependsOn": ["LinkedTemplate1","LinkedTemplate2"],
 			"properties": {
 				"mode": "Incremental",
 				"templateLink": {
