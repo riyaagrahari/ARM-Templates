@@ -1,0 +1,400 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"Location-of-Virtual_Network1": {
+			"type": "string"
+		},
+		"Virtual_Network1-name": {
+			"type": "string",
+			"metadata": {
+
+				"description": "Name of First Virtual Network"
+			}
+		},
+		"Location-of-Virtual_Network2": {
+			"type": "string"
+		},
+		"Virtual_Network2-name": {
+			"type": "string",
+			"metadata": {
+
+				"description": "Name of Second Virtual Network"
+			}
+		},
+
+		"Vnet1addressPrefix": {
+			"type": "string",
+			"defaultValue": "10.0.0.0/16",
+			"metadata": {
+				"description": "Adress range for the Virtual_Network1-name."
+			}
+		},
+		"subnet1-name": {
+			"type": "string"
+
+		},
+		"subnet1-AddressPrefix": {
+			"type": "string",
+			"defaultValue": "10.0.1.0/24",
+			"metadata": {
+				"description": "Address range for first subnet."
+			}
+		},
+		"subnet2-name": {
+			"type": "string"
+		},
+		"subnet2-AddressPrefix": {
+			"type": "string",
+			"defaultValue": "10.0.2.0/24",
+			"metadata": {
+				"description": "Address range for second subnet"
+			}
+		},
+		"subnet3-name": {
+			"type": "string"
+		},
+		"subnet3-AddressPrefix": {
+			"type": "string",
+			"defaultValue": "10.0.3.0/24",
+			"metadata": {
+				"description": "Address range for third subnet"
+			}
+		},
+		"firewallSubnet-AddressPrefix-Vnet1": {
+			"type": "string",
+			"defaultValue": "10.0.4.0/24",
+			"metadata": {
+				"description": "Address range for firewall subnet"
+			}
+		},
+		"Management-JumpBox_Subnet_Name": {
+			"type": "string"
+		},
+		"Management-JumpBox_Subnet_AddressPrefix": {
+			"type": "string",
+			"defaultValue": "10.0.5.0/24",
+			"metadata": {
+				"description": "Address range for third subnet"
+			}
+		},
+		"Virtual_Network2-name-name": {
+			"type": "string",
+			"metadata": {
+
+				"description": "This is the name of the second Vnet to be created."
+			}
+		},
+
+		"Vnet2addressPrefix": {
+			"type": "string",
+			"defaultValue": "20.0.0.0/16",
+			"metadata": {
+				"description": "Address range for the Vnet2."
+			}
+		},
+
+		"subnet1-Name-Vnet2": {
+			"type": "string"
+
+		},
+		"subnet1-AddressPrefix-Vnet2": {
+			"type": "string",
+			"defaultValue": "20.0.1.0/24",
+			"metadata": {
+				"description": "Address range for first subnet."
+			}
+		},
+		"subnet2-Name-Vnet2": {
+			"type": "string"
+		},
+		"subnet2-AddressPrefix-Vnet2": {
+			"type": "string",
+			"defaultValue": "20.0.2.0/24",
+			"metadata": {
+				"description": "Address range for second subnet"
+			}
+		},
+		"subnet3-Name-Vnet2": {
+			"type": "string"
+		},
+		"subnet3-AddressPrefix-Vnet2": {
+			"type": "string",
+			"defaultValue": "20.0.3.0/24",
+			"metadata": {
+				"description": "Address range for third subnet"
+			}
+		},
+
+		"firewallSubnet-AddressPrefix-Vnet2": {
+			"type": "string",
+			"defaultValue": "20.0.4.0/24",
+			"metadata": {
+				"description": "Address range for firewall subnet"
+			}
+		},
+
+		"Management-JumpBox_Subnet_Name-Vnet2": {
+			"type": "string"
+		},
+		"Management-JumpBox_Subnet_AddressPrefix-Vnet2": {
+			"type": "string",
+			"defaultValue": "20.0.5.0/24",
+			"metadata": {
+				"description": "Address range for jumbox subnet of Vnet2"
+			}
+		},
+		"NSG1-name": {
+			"type": "string",
+			"metadata": {
+				"description": "Name of first security group"
+			}
+		},
+		"NSG2-name": {
+			"type": "string",
+			"metadata": {
+				"description": "Name of second security group"
+			}
+		},
+		"NSG3-name": {
+			"type": "string",
+			"metadata": {
+				"description": "Name of third security group"
+			}
+		},
+		"enableDdosProtection": {
+			"type": "bool"
+		},
+
+		"virtual-Network-Access": {
+			"type": "bool",
+			"metadata": {
+				"description": "Allow access to the virtual networks."
+			}
+		},
+		"forwarded-Traffic": {
+			"type": "bool",
+			"metadata": {
+				"description": "allow traffic forwarded by a network virtual appliance in a virtual network"
+			}
+		},
+		"gateway-Transit": {
+			"type": "bool",
+			"metadata": {
+				"description": "If there is a virtual network gateway assosciated with the vnet."
+			}
+		},
+		"remoteGateways": {
+			"type": "bool",
+			"metadata": {
+				"description": "To allow traffic from Virtual_Network1-name to Vnet2 through the gateway of Vnet2"
+			}
+		}
+
+	},
+
+
+	"resources": [{
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-05-01",
+			"name": "LinkedTemplate1",
+			"properties": {
+				"mode": "Incremental",
+				"templateLink": {
+					"uri": "https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Nested_Templates_for_DisasterRecovery/Creation%20of%20Two%20Vnets%20and%20peering/NSGcreation.json",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"location": {
+						"value": "[parameters('Location-of-Virtual_Network1')]"
+					},
+					"NSG1-name": {
+						"value": "[parameters('NSG1-name')]"
+					},
+					"NSG2-name": {
+						"value": "[parameters('NSG2-name')]"
+					},
+					"NSG3-name": {
+						"value": "[parameters('NSG3-name')]"
+					},
+					"subnet1-AddressPrefix": {
+						"value": "[parameters('subnet1-AddressPrefix')]"
+					},
+					"subnet2-AddressPrefix": {
+						"value": "[parameters('subnet2-AddressPrefix')]"
+					},
+					"subnet3-AddressPrefix": {
+						"value": "[parameters('subnet3-AddressPrefix')]"
+					},
+					"subnet1-AddressPrefix-Vnet2": {
+						"value": "[parameters('subnet1-AddressPrefix-Vnet2')]"
+					},
+					"subnet2-AddressPrefix-Vnet2": {
+						"value": "[parameters('subnet2-AddressPrefix-Vnet2')]"
+					},
+					"subnet3-AddressPrefix-Vnet2": {
+						"value": "[parameters('subnet3-AddressPrefix-Vnet2')]"
+					}
+
+
+
+				}
+			}
+		},
+		{
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-05-01",
+			"name": "LinkedTemplate2",
+			"dependsOn": ["LinkedTemplate1"],
+
+			"properties": {
+				"mode": "Incremental",
+				"templateLink": {
+					"uri": "https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Nested%20Templates/Creation%20of%20Two%20Vnets%20and%20peering/Vnet.json",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"vnet": {
+						"value": "[parameters('Virtual_Network1-name')]"
+					},
+					"location": {
+						"value": "[parameters('Location-of-Virtual_Network1')]"
+					},
+					"NSG1-name": {
+						"value": "[parameters('NSG1-name')]"
+					},
+					"NSG2-name": {
+						"value": "[parameters('NSG2-name')]"
+					},
+					"NSG3-name": {
+						"value": "[parameters('NSG3-name')]"
+					},
+					"subnet1-name": {
+						"value": "[parameters('subnet1-name')]"
+					},
+					"subnet2-name": {
+						"value": "[parameters('subnet2-name')]"
+					},
+					"subnet3-name": {
+						"value": "[parameters('subnet3-name')]"
+					},
+					"subnet1-AddressPrefix": {
+						"value": "[parameters('subnet1-AddressPrefix')]"
+					},
+					"subnet2-AddressPrefix": {
+						"value": "[parameters('subnet2-AddressPrefix')]"
+					},
+					"subnet3-AddressPrefix": {
+						"value": "[parameters('subnet3-AddressPrefix')]"
+					},
+					"addressPrefix": {
+						"value": "[parameters('Vnet1addressPrefix')]"
+					},
+
+					"firewallSubnet": {
+						"value": "[parameters('firewallSubnet-AddressPrefix-Vnet1')]"
+					},
+					"enableDdosProtection": {
+						"value": "[parameters('enableDdosProtection')]"
+					}
+				}
+			}
+
+		},
+
+
+		{
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-05-01",
+			"name": "LinkedTemplate3",
+			"dependsOn": ["LinkedTemplate1"],
+			"properties": {
+				"mode": "Incremental",
+				"templateLink": {
+					"uri": "https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Nested%20Templates/Creation%20of%20Two%20Vnets%20and%20peering/Vnet.json",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"vnet": {
+						"value": "[parameters('Virtual_Network2-name')]"
+					},
+					"addressPrefix": {
+						"value": "[parameters('Vnet2addressPrefix')]"
+					},
+					"location": {
+						"value": "[parameters('Location-of-Virtual_Network2')]"
+					},
+					"subnet1-name": {
+						"value": "[parameters('subnet1-Name-Vnet2')]"
+					},
+					"subnet2-name": {
+						"value": "[parameters('subnet2-Name-Vnet2')]"
+					},
+					"subnet3-name": {
+						"value": "[parameters('subnet3-Name-Vnet2')]"
+					},
+					"NSG1-name": {
+						"value": "[parameters('NSG1-name')]"
+					},
+					"NSG2-name": {
+						"value": "[parameters('NSG2-name')]"
+					},
+					"NSG3-name": {
+						"value": "[parameters('NSG3-name')]"
+					},
+					"subnet1-AddressPrefix": {
+						"value": "[parameters('subnet1-AddressPrefix-Vnet2')]"
+					},
+					"subnet2-AddressPrefix": {
+						"value": "[parameters('subnet2-AddressPrefix-Vnet2')]"
+					},
+					"subnet3-AddressPrefix": {
+						"value": "[parameters('subnet3-AddressPrefix-Vnet2')]"
+					},
+					"firewallSubnet": {
+						"value": "[parameters('firewallSubnet-AddressPrefix-Vnet2')]"
+					},
+					"enableDdosProtection": {
+						"value": "[parameters('enableDdosProtection')]"
+					}
+
+				}
+			}
+		},
+		{
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-05-01",
+			"name": "LinkedTemplate4",
+			"dependsOn": ["LinkedTemplate3", "LinkedTemplate2"],
+			"properties": {
+				"mode": "Incremental",
+				"templateLink": {
+					"uri": "https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Vnet%20Peering/template3.json",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"Virtual_Network1-name": {
+						"value": "[parameters('Virtual_Network1-name')]"
+					},
+					"Virtual_Network2-name": {
+						"value": "[parameters('Virtual_Network2-name')]"
+					},
+					"virtualNetworkAccess": {
+						"value": "[parameters('virtual-Network-Access')]"
+					},
+					"forwardedTraffic": {
+						"value": "[parameters('forwarded-Traffic')]"
+					},
+					"gatewayTransit": {
+						"value": "[parameters('gateway-Transit')]"
+					},
+					"RemoteGateways": {
+						"value": "[parameters('remoteGateways')]"
+					}
+
+				}
+			}
+		}
+	]
+
+}
