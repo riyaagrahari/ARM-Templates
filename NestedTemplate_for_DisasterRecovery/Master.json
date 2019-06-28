@@ -12,7 +12,7 @@
 				"description": "Name of First Virtual Network"
 			}
 		},
-	
+
 
 		"Vnet1addressPrefix": {
 			"type": "string",
@@ -229,10 +229,11 @@
 					"subnet3-AddressPrefix-Vnet2": {
 						"value": "[parameters('subnet3-AddressPrefix-Vnet2')]"
 					},
-					"Management-JumpBox_Subnet_AddressPrefix":{
+					
+					"Management-JumpBox_Subnet_AddressPrefix": {
 						"value": "[parameters('Management-JumpBox_Subnet_AddressPrefix')]"
 					},
-					"Management-JumpBox_Subnet_AddressPrefix-Vnet2":{
+					"Management-JumpBox_Subnet_AddressPrefix-Vnet2": {
 						"value": "[parameters('Management-JumpBox_Subnet_AddressPrefix-Vnet2')]"
 					}
 
@@ -294,9 +295,12 @@
 					"firewallSubnet-AddressPrefix": {
 						"value": "[parameters('firewallSubnet-AddressPrefix-Vnet1')]"
 					},
-					"Management-JumpBox_Subnet_AddressPrefix":{
-						"value": "[parameters('Management-JumpBox_Subnet_AddressPrefix')]"
+					"Management-JumpBox_Subnet_Name": {
+						"value": "[parameters('Management-JumpBox_Subnet_Name')]"
 					}
+					"Management-JumpBox_Subnet_AddressPrefix": {
+						"value": "[parameters('Management-JumpBox_Subnet_AddressPrefix')]"
+					},
 					"enableDdosProtection": {
 						"value": "[parameters('enableDdosProtection')]"
 					}
@@ -310,7 +314,7 @@
 			"type": "Microsoft.Resources/deployments",
 			"apiVersion": "2018-05-01",
 			"name": "LinkedTemplate3",
-			"dependsOn": ["LinkedTemplate1","LinkedTemplate2"],
+			"dependsOn": ["LinkedTemplate1", "LinkedTemplate2"],
 			"properties": {
 				"mode": "Incremental",
 				"templateLink": {
@@ -357,9 +361,12 @@
 					"firewallSubnet-AddressPrefix": {
 						"value": "[parameters('firewallSubnet-AddressPrefix-Vnet2')]"
 					},
-					"Management-JumpBox_Subnet_AddressPrefix":{
-						"value": "[parameters('Management-JumpBox_Subnet_AddressPrefix-Vnet2')]"
+					"Management-JumpBox_Subnet_Name": {
+						"value": "[parameters('Management-JumpBox_Subnet_Name-Vnet2')]"
 					}
+					"Management-JumpBox_Subnet_AddressPrefix": {
+						"value": "[parameters('Management-JumpBox_Subnet_AddressPrefix-Vnet2')]"
+					},
 					"enableDdosProtection": {
 						"value": "[parameters('enableDdosProtection')]"
 					}
