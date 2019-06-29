@@ -14,7 +14,9 @@ Below is the Architectural Diagram for the setup which will be made. Vnets and s
 Deployment of virtual machine needs to be done by the user using the template. This template creates the resources upto sub-netowrk level.
 
 
-![Azure Virtual Network Within VNet (11)](https://user-images.githubusercontent.com/24872414/60339888-aeb2b600-99c7-11e9-93a8-485b388ca404.jpg)
+<p align="center">
+<img src="./DisasterRecovery.jpg">
+</p>
 
 
 
