@@ -10,7 +10,7 @@ Web-API-Database is a 3 tier architecture which decouples to presentation, busin
 This template creates a Virtual Network with 3 subnets (Webserver, API, Database). Further, Network Security Group are created for each and Inbound, Outbound rules are added to their respective NSG.
 For default values , you may refer to [`Parameter.json`](https://github.com/riyaagrahari/ARM-Templates/blob/master/VNet_Template_MultipleSubnet/Parameter.json) file.
 
-Below is the Architectural Diagram for the setup which will be made. Vnets and subnets will be created and network security rules are applied to subnets using NSG.+632
+Below is the Architectural Diagram for the setup which will be made. Vnets and subnets will be created and network security rules are applied to subnets using NSG.
 
 Replica of the primary vnet with its subnets and NSGs are created at some secondary location which comes up as recovery solution in case of a disaster. Communication between these Vnets is established using global peering. 
 In case of disaster, rules of NSG are appended opening custom ports on both Vnet, allowing database synchronization from secondary to primary region.
