@@ -17,7 +17,7 @@ In case of disaster, rules of NSG are appended opening custom ports on both Vnet
 
 
 <p align="center">
-<img src="./DisasterRecovery.jpg">
+<img src="./Architecture-DisasterRecovery.jpg">
 </p>
 
 
