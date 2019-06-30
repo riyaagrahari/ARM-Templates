@@ -413,13 +413,13 @@
 						"value": "[parameters('subnet3-Name-Vnet2')]"
 					},
 					"NSG1-name": {
-						"value": "[parameters('NSG1-name')]"
+						"value": "[parameters('NSG1-name-replica')]"
 					},
 					"NSG2-name": {
-						"value": "[parameters('NSG2-name')]"
+						"value": "[parameters('NSG2-name-replica')]"
 					},
 					"NSG3-name": {
-						"value": "[parameters('NSG3-name')]"
+						"value": "[parameters('NSG3-name-replica')]"
 					},
 					"subnet1-AddressPrefix": {
 						"value": "[parameters('subnet1-AddressPrefix-Vnet2')]"
