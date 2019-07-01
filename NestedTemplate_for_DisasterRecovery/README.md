@@ -8,7 +8,7 @@ Web-API-Database is a 3 tier architecture which decouples to presentation, busin
 Figure 1.1: Three Tier Architecture  
 </p>
 
-
+<br /><br />
 This template creates a Virtual Network with 3 subnets (Webserver, API, Database). Further, Network Security Group are created for each and Inbound, Outbound rules are added to their respective NSG.
 For default values , you may refer to [`Parameter.json`](https://github.com/riyaagrahari/ARM-Templates/blob/master/VNet_Template_MultipleSubnet/Parameter.json) file.
 
@@ -23,7 +23,7 @@ In case of disaster, rules of NSG are appended opening custom ports on both Vnet
 <br />
 Figure 1.1: Azure Architectural Diagram for Resources Deployed
 </p>
-
+<br /><br />
 
 
 ## Three ways of execution:
