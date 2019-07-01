@@ -4,6 +4,7 @@ Web-API-Database is a 3 tier architecture which decouples to presentation, busin
 
 <p align="center">
 <img src="./WEB-API-DB.jpeg" height="450" width="300">
+Figure 1.1: Three Tier Architecture  
 </p>
 
 
@@ -18,6 +19,7 @@ In case of disaster, rules of NSG are appended opening custom ports on both Vnet
 
 <p align="center">
 <img src="./Architecture-DisasterRecovery.jpg">
+Figure 1.1: Azure Architectural Diagram for Resources Deployed
 </p>
 
 
