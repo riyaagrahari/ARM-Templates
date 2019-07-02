@@ -22,7 +22,7 @@ In case of disaster, rules of NSG are appended opening custom ports on both Vnet
 <p align="center">
 <img src="./Architecture-DisasterRecovery.jpg">
 <br />
-Figure 1.1: Azure Architectural Diagram for Resources Deployed
+Figure 1.2: Azure Architectural Diagram for Resources Deployed
 </p>
 <br /><br />
 
