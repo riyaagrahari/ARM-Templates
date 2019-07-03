@@ -18,7 +18,6 @@ Below is the Architectural Diagram for the primary VNets and subnets which are c
     
 ![Azure_Virtual_Network_Within_VNet_Architecture](https://user-images.githubusercontent.com/24872414/60388745-684a7d80-9ad3-11e9-9d48-1fe94b6a4177.jpg)
 
-<br />
 <center> Figure 1.2: Detailed Architectural Diagram for Primary VNet. </center>
 </p>
 Replica of the primary vnet with its subnets and NSGs are created at some secondary location which comes up as recovery solution in case of a disaster. Communication between these Vnets is established using global peering.
@@ -28,7 +27,7 @@ In case of disaster, rules of NSG are appended opening custom ports on both Vnet
 <p align="center">
 <img src="./Architecture-DisasterRecovery.jpg">
 <br />
-Figure 1.2: Azure Architectural Diagram for Disaster Recovery Solution- Primary and Secondary Vnet
+Figure 1.3: Azure Architectural Diagram for Disaster Recovery Solution- Primary and Secondary Vnet
 </p>
 <br /><br />
 
