@@ -13,7 +13,7 @@ Figure 1.1: Three Tier Architecture
 This template creates a Virtual Network with 3 subnets (Webserver, API, Database). Further, Network Security Group are created for each and Inbound, Outbound rules are added to their respective NSG.
 For default values , you may refer to [`Parameter.json`](https://github.com/riyaagrahari/ARM-Templates/blob/master/VNet_Template_MultipleSubnet/Parameter.json) file.
 
-Below is the Architectural Diagram for the setup which will be made. Vnets and subnets will be created and network security rules are applied to subnets using NSG.+632
+Below is the Architectural Diagram for the setup which will be made. Vnets and subnets will be created and network security rules are applied to subnets using NSG.
 
 Replica of the primary vnet with its subnets and NSGs are created at some secondary location which comes up as recovery solution in case of a disaster. Communication between these Vnets is established using global peering. 
 In case of disaster, rules of NSG are appended opening custom ports on both Vnet, allowing database synchronization from secondary to primary region.
@@ -68,3 +68,17 @@ az group deployment create --resource-group <Resource Group Name> --template-fil
 ```bash
 New-AzResourceGroupDeployment -ResourceGroupName <Resource Group Name> -TemplateFile template.json
 ```
+### 4. Terraform:
+<a href="https://shell.azure.com" target="_blank">
+ <img name="launch-cloud-shell" src="https://docs.microsoft.com/azure/includes/media/cloud-shell-try-it/launchcloudshell.png" data-linktype="external">
+</a>
+</br>
+
+Terraform can be used for deploying ARM templates. 
+- Use Master.tf to deploy resources on Azure using terraform.At the end of this file, there is a parameter section, you can change the values to your desired parameter values. 
+- Upload Master.json ARM template so that Terraform can perform operation using it. 
+- Configure Terraform if you are using Azure CLI on your local machine[`configuring Terraform`](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-install-configure)
+- Deploy your template using following commands
+    - ```terraform init ```
+    - ```terraform plan ``` 
+    - ```terraform apply```
