@@ -44,6 +44,7 @@ Below is the architectural diagram for disaster recovery solution developed wher
 <a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2Friyaagrahari%2FAzure-Templates%2Fmaster%2FNestedTemplate_for_DisasterRecovery%2FMaster.json" target="_blank">
     <img src="http://armviz.io/visualizebutton.png"/>
 </a>
+
 <br />
 
 - Click on Deploy to Azure button for deploying the template directly to Azure Portal.Fill in the required parameters you want for deploying your template.<br/>
@@ -54,6 +55,7 @@ Below is the architectural diagram for disaster recovery solution developed wher
 <a href="https://shell.azure.com" target="_blank">
  <img name="launch-cloud-shell" src="https://docs.microsoft.com/azure/includes/media/cloud-shell-try-it/launchcloudshell.png" data-linktype="external">
 </a>
+
 <br />
 
 - Click on the Launch Cloud Shell button,login with Azure credentials and select Bash shell there to open Azure CLI.
@@ -69,6 +71,7 @@ az group deployment create --resource-group <Resource Group Name> --template-fil
 <a href="https://shell.azure.com" target="_blank">
  <img name="launch-cloud-shell" src="https://docs.microsoft.com/azure/includes/media/cloud-shell-try-it/launchcloudshell.png" data-linktype="external">
 </a>
+
 <br />
 
 - Click on the Launch Cloud Shell button, login with Azure credentials and you will be redirected to powershell portal.
@@ -83,12 +86,13 @@ New-AzResourceGroupDeployment -ResourceGroupName <Resource Group Name> -Template
 <a href="https://shell.azure.com" target="_blank">
  <img name="launch-cloud-shell" src="https://docs.microsoft.com/azure/includes/media/cloud-shell-try-it/launchcloudshell.png" data-linktype="external">
 </a>
+
 </br>
 
 Terraform can be used for deploying ARM templates. 
 - Upload Master.tf to deploy resources on Azure using terraform. At the end of this file, there is a parameter section, you can change the values to your desired parameter values. 
 - Upload Master.json ARM template so that Terraform can perform operation using it. 
-- [`Configure Terraform`](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-install-configure) if you are using Azure CLI on your local machine.
+- [`Configure Terraform`] (https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-install-configure) if you are using Azure CLI on your local machine.
 - Deploy your template using following commands:
 
     - ```terraform init ```
