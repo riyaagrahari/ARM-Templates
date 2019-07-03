@@ -88,7 +88,7 @@ New-AzResourceGroupDeployment -ResourceGroupName <Resource Group Name> -Template
 Terraform can be used for deploying ARM templates. 
 - Upload Master.tf to deploy resources on Azure using terraform. At the end of this file, there is a parameter section, you can change the values to your desired parameter values. 
 - Upload Master.json ARM template so that Terraform can perform operation using it. 
-- Configure Terraform [`configuring Terraform`](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-install-configure) if you are using Azure CLI on your local machine.
+- [`Configure Terraform`](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-install-configure) if you are using Azure CLI on your local machine.
 - Deploy your template using following commands:
 
     - ```terraform init ```
