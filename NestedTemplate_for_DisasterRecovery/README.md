@@ -1,4 +1,4 @@
-#  Template to implement Disaster Recovery Solution for Virtual Network
+#  Template to implement Disaster Recovery Solution for Virtual Network making use of Global Peering
 
 Web-API-Database is a 3 tier architecture which decouples to presentation, business or application and database layers induvidually. The business layer exposes its API to applications as well as for the remote presentation layer. Remote presentation layer uses REST API. There is a internal database API for communications between application layer and database layer. REST API’s input is processed by the application layer to perform CRUD operations on the database.
 <br />
@@ -83,6 +83,7 @@ Terraform can be used for deploying ARM templates.
 - Upload Master.json ARM template so that Terraform can perform operation using it. 
 - Configure Terraform [`configuring Terraform`](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-install-configure) if you are using Azure CLI on your local machine
 - Deploy your template using following commands
-  - ```terraform init ```
-  - ```terraform plan ``` 
-  - ```terraform apply```
+
+    - ```terraform init ```
+    - ```terraform plan ``` 
+    - ```terraform apply```
