@@ -72,6 +72,7 @@ az group deployment create --resource-group <Resource Group Name> --template-fil
 New-AzResourceGroupDeployment -ResourceGroupName <Resource Group Name> -TemplateFile template.json
 ```
 ### 4. Terraform:
+<br />
 <a href="https://shell.azure.com" target="_blank">
  <img name="launch-cloud-shell" src="https://docs.microsoft.com/azure/includes/media/cloud-shell-try-it/launchcloudshell.png" data-linktype="external">
 </a>
