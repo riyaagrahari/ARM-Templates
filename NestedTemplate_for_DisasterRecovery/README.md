@@ -15,10 +15,9 @@ For default values , you may refer to [`Parameter.json`](https://github.com/riya
 
 Below is the Architectural Diagram for the primary VNets and subnets which are created and network security rules are applied to subnets using NSG.
 <p align="center">
-    
 ![Azure_Virtual_Network_Within_VNet_Architecture](https://user-images.githubusercontent.com/24872414/60388745-684a7d80-9ad3-11e9-9d48-1fe94b6a4177.jpg)
-
-<center> Figure 1.2: Detailed Architectural Diagram for Primary VNet. </center>
+<br />
+Figure 1.2: Detailed Architectural Diagram for Primary VNet.
 </p>
 Replica of the primary vnet with its subnets and NSGs are created at some secondary location which comes up as recovery solution in case of a disaster. Communication between these Vnets is established using global peering.
 
