@@ -38,6 +38,7 @@ Figure 1.2: Azure Architectural Diagram for Resources Deployed
     <img src="http://armviz.io/visualizebutton.png"/>
 </a>
 <br />
+
 - Click on Deploy to Azure button for deploying the template directly to Azure Portal.Fill in the required parameters you want for deploying your template<br/>
 - Click on Visualize button for viewing the template and design in armviz.io.<br />
 
@@ -47,6 +48,7 @@ Figure 1.2: Azure Architectural Diagram for Resources Deployed
  <img name="launch-cloud-shell" src="https://docs.microsoft.com/azure/includes/media/cloud-shell-try-it/launchcloudshell.png" data-linktype="external">
 </a>
 <br />
+
 - Click on the Launch Cloud Shell button,login with Azure credentials and select Bash shell there to open Azure CLI.
 - Upload template file using upload option on Azure CLI portal.<br />
 - Use following Azure CLI command to execute template.
@@ -61,8 +63,9 @@ az group deployment create --resource-group <Resource Group Name> --template-fil
  <img name="launch-cloud-shell" src="https://docs.microsoft.com/azure/includes/media/cloud-shell-try-it/launchcloudshell.png" data-linktype="external">
 </a>
 <br />
+
 - Click on the Launch Cloud Shell button, login with Azure credentials and you will be redirected to powershell portal.
-- Upload template file using upload option, change current directory to home directory of azure user as it is default folder for storing   uploaded files(use cd).<br />
+- Upload template file using upload option, change current directory to home directory of azure user as it is default folder for storing  uploaded files(use cd).<br />
 - Use following Azure Powershell Command to execute template.
 
 ```bash
@@ -79,6 +82,6 @@ Terraform can be used for deploying ARM templates.
 - Upload Master.json ARM template so that Terraform can perform operation using it. 
 - Configure Terraform if you are using Azure CLI on your local machine[`configuring Terraform`](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-install-configure)
 - Deploy your template using following commands
-    - ```terraform init ```
-    - ```terraform plan ``` 
-    - ```terraform apply```
+  - ```terraform init ```
+  - ```terraform plan ``` 
+  - ```terraform apply```
