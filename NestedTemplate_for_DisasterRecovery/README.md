@@ -39,7 +39,7 @@ Figure 1.2: Azure Architectural Diagram for Resources Deployed
 </a>
 <br />
 
-- Click on Deploy to Azure button for deploying the template directly to Azure Portal.Fill in the required parameters you want for deploying your template<br/>
+- Click on Deploy to Azure button for deploying the template directly to Azure Portal.Fill in the required parameters you want for deploying your template.<br/>
 - Click on Visualize button for viewing the template and design in armviz.io.<br />
 
 ### 2. Azure CLI 
@@ -81,8 +81,8 @@ New-AzResourceGroupDeployment -ResourceGroupName <Resource Group Name> -Template
 Terraform can be used for deploying ARM templates. 
 - Use Master.tf to deploy resources on Azure using terraform.At the end of this file, there is a parameter section, you can change the values to your desired parameter values. 
 - Upload Master.json ARM template so that Terraform can perform operation using it. 
-- Configure Terraform [`configuring Terraform`](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-install-configure) if you are using Azure CLI on your local machine
-- Deploy your template using following commands
+- Configure Terraform [`configuring Terraform`](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-install-configure) if you are using Azure CLI on your local machine.
+- Deploy your template using following commands:
 
     - ```terraform init ```
     - ```terraform plan ``` 
