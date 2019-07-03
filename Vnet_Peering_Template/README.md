@@ -14,6 +14,7 @@ For default values, you may refer to [`Parameter.json`](https://github.com/riyaa
     <img src="http://armviz.io/visualizebutton.png"/>
 </a>
 <br />
+
 - Click on Deploy to Azure button for deploying the template directly to Azure Portal.Fill in the required parameters you want for deploying your template<br/>
 - Click on Visualize button for viewing the template and design in armviz.io.<br />
 
