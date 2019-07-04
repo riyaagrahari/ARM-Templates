@@ -34,7 +34,7 @@ Below is the architectural diagram for disaster recovery solution developed wher
 <br /><br />
 
 
-## Three ways of execution:
+## Four ways of execution:
 
 ### 1. Azure Portal 
 <br />
