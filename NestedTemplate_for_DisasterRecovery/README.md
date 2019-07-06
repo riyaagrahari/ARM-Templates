@@ -95,3 +95,8 @@ Terraform can be used for deploying ARM templates.
     - ```terraform init ```
     - ```terraform plan ``` 
     - ```terraform apply```
+## License
+This project is licensed under the  License - see the LICENSE.md file for details
+## Author
+Riya Agrahari  
+UPES, India
