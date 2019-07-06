@@ -33,6 +33,7 @@ Below is the architectural diagram for disaster recovery solution developed wher
 </p>
 <br /><br />
 
+# Installation
 
 ## Three ways of execution:
 
