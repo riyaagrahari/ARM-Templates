@@ -49,7 +49,8 @@
 			"name": "[parameters('NSG1-name')]",
 			"location": "[parameters('Location')]",
 			"properties": {
-				"securityRules": [{
+				"securityRules": [
+					{
 						"name": "HTTPorHTTPS-request",
 						"properties": {
 							"description": "Rule for HTTP request and HTTPS SSL request ",
@@ -157,9 +158,9 @@
 							"description": "Rule for accepting FTP requests from Database to API server",
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
-							"sourceAddressPrefixes": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
+							"sourceAddressPrefixes": ["[parameters('subnet3-AddressPrefix')]", "[parameters('subnet3-AddressPrefix-Vnet2')]"],
 							"destinationPortRange": "21",
-							"destinationAddressPrefixes": ["[parameters('subnet3-AddressPrefix')]", "[parameters('subnet3-AddressPrefix-Vnet2')]"],
+							"destinationAddressPrefixes": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
 							"access": "Allow",
 							"priority": 120,
 							"direction": "Inbound"
