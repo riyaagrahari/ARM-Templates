@@ -33,7 +33,7 @@ Below is the architectural diagram for disaster recovery solution developed wher
 </p>
 <br /><br />
 
-# Installation
+## Installation
 
 ## Three ways of execution:
 
@@ -98,5 +98,5 @@ Terraform can be used for deploying ARM templates.
 ## License
 This project is licensed under the  License - see the [`LICENSE.md`](https://github.com/riyaagrahari/ARM-Templates/blob/master/LICENSE) file for details
 ## Author
-Riya Agrahari  
+[`Riya Agrahari`](https://github.com/riyaagrahari/) 
 UPES, India
