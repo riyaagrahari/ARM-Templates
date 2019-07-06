@@ -99,4 +99,4 @@ Terraform can be used for deploying ARM templates.
 This project is licensed under the  License - see the [`LICENSE.md`](https://github.com/riyaagrahari/ARM-Templates/blob/master/LICENSE) file for details
 ## Author
 [`Riya Agrahari`](https://github.com/riyaagrahari/)<br />
-UPES, India
+
