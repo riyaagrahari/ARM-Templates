@@ -85,12 +85,26 @@
 						}
 					},
 					{
+						"name": "API-Web-response",
+						"properties": {
+							"description": "Rule for accepting response from API-Web Server",
+							"protocol": "Tcp",
+							"sourcePortRange": "8083",
+							"sourceAddressPrefixes": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
+							"destinationPortRange": "8081",
+							"destinationAddressPrefixes": ["[parameters('subnet1-AddressPrefix')]", "[parameters('subnet1-AddressPrefix-Vnet2')]"],
+							"access": "Allow",
+							"priority": 110,
+							"direction": "Inbound"
+						}
+					}
+					{
 						"name": "DenyOutBoundToDB",
 						"properties": {
 							"description": "Rule for denying Out-bound traffic to Database ",
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
-							"sourceAddressPrefix": "*",
+							"sourceAddressPrefixes": ["[parameters('subnet1-AddressPrefix')]", "[parameters('subnet1-AddressPrefix-Vnet2')]"],
 							"destinationPortRange": "*",
 							"destinationAddressPrefixes": ["[parameters('subnet3-AddressPrefix')]", "[parameters('subnet3-AddressPrefix-Vnet2')]"],
 							"access": "Deny",
@@ -99,13 +113,13 @@
 						}
 					},
 					{
-						"name": "API-Web-response",
+						"name": "Web-API-request",
 						"properties": {
-							"description": "Rule for accepting response from API Server",
+							"description": "Rule for sending request from Web-API Server",
 							"protocol": "Tcp",
-							"sourcePortRange": "8083",
+							"sourcePortRange": "8081",
 							"sourceAddressPrefixes": ["[parameters('subnet1-AddressPrefix')]", "[parameters('subnet1-AddressPrefix-Vnet2')]"],
-							"destinationPortRange": "8081",
+							"destinationPortRange": "8083",
 							"destinationAddressPrefixes": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
 							"access": "Allow",
 							"priority": 110,
@@ -126,9 +140,9 @@
 						"properties": {
 							"description": "Rule for accepting requests from WEB to API ",
 							"protocol": "Tcp",
-							"sourcePortRange": "8083",
+							"sourcePortRange": "8081",
 							"sourceAddressPrefixes": ["[parameters('subnet1-AddressPrefix')]", "[parameters('subnet1-AddressPrefix-Vnet2')]"],
-							"destinationPortRange": "8081",
+							"destinationPortRange": "8083",
 							"destinationAddressPrefixes": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
 							"access": "Allow",
 							"priority": 100,
@@ -153,7 +167,7 @@
 						}
 					},
 					{
-						"name": "FTPfromApi-DB",
+						"name": "FTPfromDB-API",
 						"properties": {
 							"description": "Rule for accepting FTP requests from Database to API server",
 							"protocol": "Tcp",
@@ -185,9 +199,9 @@
 						"properties": {
 							"description": "Rule for sending response from API - WEB",
 							"protocol": "Tcp",
-							"sourcePortRange": "8081",
+							"sourcePortRange": "8083",
 							"sourceAddressPrefixes": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
-							"destinationPortRange": "8083",
+							"destinationPortRange": "8081",
 							"destinationAddressPrefixes": ["[parameters('subnet1-AddressPrefix')]", "[parameters('subnet1-AddressPrefix-Vnet2')]"],
 							"access": "Allow",
 							"priority": 110,
@@ -263,7 +277,7 @@
 						}
 					},
 					{
-						"name": "FTPfromDB-API",
+						"name": "FTPfromAPI-DB-Inbound",
 						"properties": {
 							"description": "Rule for making FTP connection from Database to API server",
 							"protocol": "Tcp",
@@ -282,9 +296,9 @@
 							"description": "Rule for MySQL response to API-server",
 							"protocol": "Tcp",
 							"sourcePortRange": "3306",
-							"sourceAddressPrefixes": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
+							"sourceAddressPrefixes": ["[parameters('subnet3-AddressPrefix')]", "[parameters('subnet3-AddressPrefix-Vnet2')]"],
 							"destinationPortRange": "118",
-							"destinationAddressPrefixes": ["[parameters('subnet3-AddressPrefix')]", "[parameters('subnet3-AddressPrefix-Vnet2')]"],
+							"destinationAddressPrefixes": ["[parameters('subnet2-AddressPrefix')]", "[parameters('subnet2-AddressPrefix-Vnet2')]"],
 							"access": "Allow",
 							"priority": 100,
 							"direction": "Outbound"
@@ -293,7 +307,7 @@
 					{
 						"name": "FTPfromDB-API-Outbound",
 						"properties": {
-							"description": "Rule for accepting FTP connection from Database to API server",
+							"description": "Rule for sending FTP connection from Database to API server",
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
 							"sourceAddressPrefixes": ["[parameters('subnet3-AddressPrefix')]", "[parameters('subnet3-AddressPrefix-Vnet2')]"],
