@@ -55,8 +55,6 @@
 								"id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('NSG1-name'))]"
 							}
 						}
-
-
 					},
 					{
 						"name": "[parameters('subnet2-name')]",
@@ -66,10 +64,7 @@
 							"networkSecurityGroup": {
 								"id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('NSG2-name'))]"
 							}
-
 						}
-
-
 					},
 					{
 						"name": "[parameters('subnet3-name')]",
@@ -80,19 +75,14 @@
 								"id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('NSG3-name'))]"
 							}
 						}
-
-
 					},
 					{
 						"name": "[parameters('Management-JumpBox_Subnet_Name')]",
 
 						"properties": {
 							"addressPrefix": "[parameters('Management-JumpBox_Subnet_AddressPrefix')]",
-							
 						}
-
 					},
-					
 					{
 						"name": "AzureFirewallSubnet",
 
@@ -100,10 +90,7 @@
 							"addressPrefix": "[parameters('firewallSubnet-AddressPrefix')]"
 
 						}
-
-
 					}
-
 				],
 				"enableDdosProtection": "[parameters('enableDdosProtection')]"
 			}
