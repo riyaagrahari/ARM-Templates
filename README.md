@@ -13,3 +13,8 @@
 - This repository includes templates for deploying resources on azure like storage, virtual networks, sub-networks, Virtual Network Peering etc.
 
 #### This repository contains code to provision resources (Resource Group, Virtual Network, Sub-Networks, Network Security Groups and Rules, Peering Connection) through ARM Templates in Azure.
+
+## License
+This project is licensed under the  License - see the [`LICENSE.md`](https://github.com/riyaagrahari/ARM-Templates/blob/master/LICENSE) file for details
+## Author
+[`Riya Agrahari`](https://github.com/riyaagrahari/)<br />
