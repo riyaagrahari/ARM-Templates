@@ -1,7 +1,7 @@
 # Create Virtual Network Peering between existing Virtual Networks using ARM Template 
 
 <p align="center">
-<img src="peering.png" height=300 width=600>
+<img src="./Diagrams/peering.png" height=300 width=600>
 <br />
 </p>
 
