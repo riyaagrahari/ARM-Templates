@@ -8,7 +8,7 @@ Azure Storage, a durable, scalable, managed, secure and highly available service
     <b> Figure 1.1: Storage account deployment using ARM </b>  
 </p>
 
-This template creates a Virtual Network with subnet named as subnet-deploy.
+This template creates a Storage Account at particular location with properties like access tier (Hot, Cold, Archive), account type (like Standard_GRS, Standard_LRS etc.) and account kind(like StorageV2).
 For default values , you may refer to [`Parameter.json`](https://github.com/riyaagrahari/ARM-Templates/blob/master/Storage_Template/Parameter.json) file.
 
 ## Three ways of execution:
