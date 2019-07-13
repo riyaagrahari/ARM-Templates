@@ -1,6 +1,8 @@
 #  Template to create Virtual Network with Multiple Subnets
-This template creates a Virtual Network with three subnets.
-For default values , you may refer to [`Parameter.json`](https://github.com/riyaagrahari/ARM-Templates/blob/master/VNet_Template_MultipleSubnet/Parameter.json) file.
+Azure Virtual Network allows various Azure resources to communicate with each other, the internet, and on-premises networks in a secure manner. Along with the traditional networking features, VNet also brings additional benefits of Azure's infrastructure such as scale, availability, and isolation.
+<br>Subnets in Azure Vnet enable you to segment the virtual network into one or more sub-networks. It allocates a portion of the virtual network's address space to each of the subnets.
+
+#### This template creates a Virtual Network with three subnets. For default values , you may refer to [`Parameter.json`](https://github.com/riyaagrahari/ARM-Templates/blob/master/VNet_Template_MultipleSubnet/Parameter.json) file.
 
 ## Three ways of execution:
 
