@@ -1,7 +1,7 @@
 #  Azure Resource Manager (ARM) Templates
 
 <p align="center">
-<img src="Azure.png" height=300 width=500>
+<img src="Azure.png" height=200 width=340>
 <br />
 </p>
 
