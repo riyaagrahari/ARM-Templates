@@ -3,7 +3,7 @@ This template creates a Virtual Network with subnet named as subnet-deploy.
 For default values , you may refer to [`Parameter.json`](https://github.com/riyaagrahari/ARM-Templates/blob/master/Storage_Template/Parameter.json) file.
 
 <p align="center">
-<img src="./storage-with-ARM.png">
+<img src="./Diagrams-Screenshots/storage-with-ARM.png">
 <br />
     <b> Figure 1.1: Storage account deployment using ARM </b>  
 </p>
