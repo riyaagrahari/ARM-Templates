@@ -5,8 +5,9 @@
 <br />
 </p>
 
+Peering is the process through which networks connect and exchange traffic among the users in each network. Virtual Network peering lets Azure virtual networks to seamlessly connect to each other and makes them appear as one.
 
-This template creates peering between two existing Virtual Network.<br/>
+#### This template creates peering between two existing Virtual Network.<br/>
 To create Virtual Network you can refer to [`Vnet Template`](https://github.com/riyaagrahari/ARM-Templates/blob/master/VNet_Template_SingleSubnet/template.json) file.
 For default values, you may refer to [`Parameter.json`](https://github.com/riyaagrahari/ARM-Templates/blob/master/Vnet_Peering_Template/Parameter.json) file.
 
