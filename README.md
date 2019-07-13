@@ -11,3 +11,5 @@
 - Provisioning and Managing infrastructure through code as well as performing automation on setting up our infrastructure in few moments of time is performed using these templates.
 
 - This repository includes templates for deploying resources on azure like storage, virtual networks, sub-networks, Virtual Network Peering etc.
+
+#### This repository contains code to provision resources (Resource Group, Virtual Network, Sub-Networks, Network Security Groups and Rules, Peering Connection) through ARM Templates in Azure.
