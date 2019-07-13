@@ -1,4 +1,4 @@
-# Create Virtual Network Peering between existing Virtual Networks using ARM Template 
+# Peering between existing Virtual Networks 
 
 <p align="center">
 <img src="./Diagrams/peering.png" height=300 width=600>
