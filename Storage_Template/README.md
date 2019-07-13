@@ -1,12 +1,15 @@
 # Template to create Storage Account
-This template creates a Virtual Network with subnet named as subnet-deploy.
-For default values , you may refer to [`Parameter.json`](https://github.com/riyaagrahari/ARM-Templates/blob/master/Storage_Template/Parameter.json) file.
+
+Azure Storage, a durable, scalable, managed, secure and highly available service provided by Microsoft that supports scalable object data, cloud file system, reliable messaging and NoSQL store for storing unstructured data. 
 
 <p align="center">
 <img src="./Diagrams-Screenshots/storage-with-ARM.png">
 <br />
     <b> Figure 1.1: Storage account deployment using ARM </b>  
 </p>
+
+This template creates a Virtual Network with subnet named as subnet-deploy.
+For default values , you may refer to [`Parameter.json`](https://github.com/riyaagrahari/ARM-Templates/blob/master/Storage_Template/Parameter.json) file.
 
 ## Three ways of execution:
 
