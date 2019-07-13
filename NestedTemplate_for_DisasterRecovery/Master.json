@@ -181,24 +181,28 @@
 
 		"virtual-Network-Access": {
 			"type": "bool",
+			"defaultValue": true,
 			"metadata": {
 				"description": "Allow access to the virtual networks."
 			}
 		},
 		"forwarded-Traffic": {
 			"type": "bool",
+			"defaultValue": false,
 			"metadata": {
 				"description": "allow traffic forwarded by a network virtual appliance in a virtual network"
 			}
 		},
 		"gateway-Transit": {
 			"type": "bool",
+			"defaultValue": false,
 			"metadata": {
 				"description": "If there is a virtual network gateway assosciated with the vnet."
 			}
 		},
 		"remoteGateways": {
 			"type": "bool",
+			"defaultValue": false,
 			"metadata": {
 				"description": "To allow traffic from Virtual_Network1-name to Vnet2 through the gateway of Vnet2"
 			}
