@@ -24,6 +24,7 @@ Below is the Architectural Diagram for the primary VNets and subnets which are c
 Replica of the primary vnet with its subnets and NSGs are created at some secondary location which comes up as recovery solution in case of a disaster. Communication between these Vnets is established using global peering.
 
 In case of disaster, rules of NSG are appended opening custom ports on both Vnet, allowing database synchronization from secondary to primary region.<br />
+This can be done by loading the [`powershell.ps1`](https://github.com/riyaagrahari/ARM-Templates/blob/master/NestedTemplate_for_DisasterRecovery/powershell.ps1 ) on the Azure powershell. Change the values of Resource Group and NSG for database primary and secondary Subnet as per your existing resources and then run it.
 Below is the architectural diagram for disaster recovery solution developed where a replica secondary vnet is created and peering is established between them
 
 <p align="center">
