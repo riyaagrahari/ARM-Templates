@@ -1,6 +1,6 @@
 Connect-AzAccount
 
-$ResourceGroup="RG-DisasterRecovery"
+$ResourceGroup="RG1"
 $port=2800
 
 $inboundRule1="Inbound-ReplicaDB-PrimaryDB-Communication"
@@ -9,9 +9,9 @@ $inboundRule2="Inbound-PrimaryDB-ReplicaDB-Communication"
 $outboundRule2="Outbound-ReplicaDB-PrimaryDB-Communication"
 
 #name of NSG as per setup made by you
-$NSGname="nsgnDR-3"
+$NSGname="NSG3"
 
-$NSGreplicaName="nsgnDR-13"
+$NSGreplicaName="NSG3-replica"
 
 $r = Get-AzResource | Where {$_.ResourceGroupName -eq $ResourceGroup -and $_.ResourceType -eq "Microsoft.Network/networkSecurityGroups"}
 
@@ -33,7 +33,7 @@ $NSG | Set-AzNetworkSecurityGroup
 
 $NSG2 = Get-AzNetworkSecurityGroup -Name $NSGreplicaName -ResourceGroupName $ResourceGroup
 
-# inbound security rule ule for replica DB.
+# inbound security rule for replica DB.
 $NSG2 | Add-AzNetworkSecurityRuleConfig -Name $inboundRule2 -Description "Allow Inbound Communication from Primary Database to Secondary Replica DB " -Access Allow `
     -Protocol * -Direction Inbound -Priority 3400 -SourceAddressPrefix "10.0.3.0/24" -SourcePortRange $port `
     -DestinationAddressPrefix "20.0.3.0/24" -DestinationPortRange $port
