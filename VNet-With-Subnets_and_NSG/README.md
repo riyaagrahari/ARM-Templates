@@ -6,7 +6,7 @@ This template creates a Virtual Network with 3 subnets (Webserver, API, Database
 For default values , you may refer to [`Parameter.json`](https://github.com/riyaagrahari/ARM-Templates/blob/master/VNet_Template_MultipleSubnet/Parameter.json) file.
 
 Below is the Architectural Diagram for the setup which will be made. Vnets and subnets will be created and network security rules are applied to subnets using NSG.
-Deployment of virtual machine needs to be done by the user using the template. This template creates the resources upto sub-netowrk level.
+Deployment of virtual machine needs to be done by the user using the template. This template creates the resources upto sub-network level.
 
 
 ![Azure_Virtual_Network_Within_VNet_Architecture](https://user-images.githubusercontent.com/24872414/60388745-684a7d80-9ad3-11e9-9d48-1fe94b6a4177.jpg)
