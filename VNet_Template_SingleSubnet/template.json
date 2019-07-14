@@ -4,6 +4,7 @@
   "parameters": {
     "Virtual-Network-name": {
       "type": "String",
+      "defaultValue": "Vnet1",
       "metadata": {
         "description": "Name of Virtual Network"
       }
@@ -16,18 +17,21 @@
     },
     "Virtual-Network-addressPrefix": {
       "type": "String",
+      "defaultValue": "10.2.0.0/16",
       "metadata": {
         "description": "Address-Prefix of Virtual Network in CIDR format"
       }
     },
     "subnetAddressPrefix": {
       "type": "String",
+      "defaultValue": "10.2.0.0/24",
       "metadata": {
         "description": "Address-Prefix of Subnet in CIDR format"
       }
     },
     "enableDdosProtection_In_VirtualNetwork": {
       "type": "Bool",
+      "defaultValue": false,
       "metadata": {
         "description": "DDoS protection allow or deny"
       }
