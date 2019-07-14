@@ -4,6 +4,7 @@
   "parameters": {
     "Virtual-Network-name": {
       "type": "string",
+      "defaultValue": "Vnet1",
       "metadata": {
         "description": "Name of Virtual-Network"
       }
@@ -16,48 +17,56 @@
     },
     "Virtual-Network-addressPrefix": {
       "type": "string",
+      "defaultValue": "10.2.0.0/16",
       "metadata": {
         "description": "Address-Prefix of Virtual Network in CIDR format"
       }
     },
     "subnet1_Name": {
       "type": "string",
+      "defaultValue": "Subnet-1",
       "metadata": {
         "description": "Name of Subnet 1"
       }
     },
     "subnet2_Name": {
       "type": "string",
+      "defaultValue": "Subnet-2",
       "metadata": {
         "description": "Name of Subnet 2"
       }
     },
     "subnet3_Name": {
       "type": "string",
+      "defaultValue": "Subnet-3",
       "metadata": {
         "description": "Name of Subnet 3"
       }
     },
     "subnet1_AddressPrefix": {
       "type": "string",
+      "defaultValue": "10.2.1.0/24",
       "metadata": {
         "description": "Address-Prefix of Subnet 1 in CIDR format"
       }
     },
     "subnet2_AddressPrefix": {
       "type": "string",
+      "defaultValue": "10.2.2.0/24",
       "metadata": {
         "description": "Address-Prefix of Subnet 2 in CIDR format"
       }
     },
     "subnet3_AddressPrefix": {
       "type": "string",
+      "defaultValue": "10.2.3.0/24",
       "metadata": {
         "description": "Address-Prefix of Subnet 3 in CIDR format"
       }
     },
     "enableDdosProtection_In_VirtualNetwork": {
       "type": "bool",
+      "defaultValue": false,
       "metadata": {
         "description": "DDoS protection allow or deny"
       }
