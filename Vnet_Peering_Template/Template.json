@@ -4,36 +4,42 @@
   "parameters": {
     "Virtual_Network1_Name": {
       "type": "string",
+      "defaultValue": "VNet1",
       "metadata": {
         "description": "Name of first Virtual Network"
       }
     },
     "Virtual_Network2_Name": {
       "type": "string",
+      "defaultValue": "VNet2",
       "metadata": {
         "description": "Name of second Virtual Network"
       }
     },
     "Allow_Virtual_Network_Access": {
       "type": "bool",
+      "defaultValue": true,
       "metadata": {
         "description": "Virtual Network Access to be allowed or not"
       }
     },
     "Allow_Forwarded_Traffic": {
       "type": "bool",
+      "defaultValue": false,
       "metadata": {
         "description": "Forward Current Traffic to be allowed or not"
       }
     },
     "Allow_Gateway_Transit": {
       "type": "bool",
+      "defaultValue": false,
       "metadata": {
         "description": "Gateway Transit to be allowed or not"
       }
     },
     "Use_Remote_Gateways": {
       "type": "bool",
+      "defaultValue": false,
       "metadata": {
         "description": "Use Remote Gateways or not"
       }
