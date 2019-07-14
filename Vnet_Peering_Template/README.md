@@ -1,7 +1,7 @@
 # Peering between existing Virtual Networks 
 
 <p align="center">
-<img src="./Diagrams/peering.png" height=300 width=600>
+<img src="./Diagrams/peering.png" height=200 width=500>
 <br />
 </p>
 
