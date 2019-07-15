@@ -30,8 +30,6 @@
 		"enableDdosProtection":{
 			"type": "bool"
 		}
-
-
 	},
     "resources": [
         {
