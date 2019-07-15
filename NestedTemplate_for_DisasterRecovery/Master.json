@@ -88,7 +88,7 @@
 			"type": "string"
 
 		},
-		"subnet1_Address_Prefix-Vnet2": {
+		"subnet1_Address_Prefix_Vnet2": {
 			"type": "string",
 			"defaultValue": "20.0.1.0/24",
 			"metadata": {
