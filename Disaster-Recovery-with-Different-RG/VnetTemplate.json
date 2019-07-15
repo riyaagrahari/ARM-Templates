@@ -80,7 +80,7 @@
 						"name": "[parameters('Management-JumpBox_Subnet_Name')]",
 
 						"properties": {
-							"addressPrefix": "[parameters('Management-JumpBox_Subnet_AddressPrefix')]",
+							"addressPrefix": "[parameters('Management-JumpBox_Subnet_AddressPrefix')]"
 						}
 					},
 					{
