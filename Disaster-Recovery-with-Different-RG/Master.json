@@ -135,7 +135,7 @@
         {
         "type": "Microsoft.Resources/deployments",
         "apiVersion": "2018-05-01",
-        "name": "LinkedTemplate6",
+        "name": "LinkedTemplate1",
         "properties": {
             "copy":[{
             "count":"[length(parameters('Location-of-Resource-Groups'))]",
@@ -157,8 +157,8 @@
         {
         "type": "Microsoft.Resources/deployments",
         "apiVersion": "2018-05-01",
-        "name": "LinkedTemplate1",
-        "dependsOn": ["LinkedTemplate6"],
+        "name": "LinkedTemplate2",
+        "dependsOn": ["LinkedTemplate1"],
         "properties": {
             "copy":[{
             "count":"[length(parameters('Location-of-Resource-Groups'))]",   
@@ -199,8 +199,8 @@
     {
         "type": "Microsoft.Resources/deployments",
         "apiVersion": "2018-05-01",
-        "name": "LinkedTemplate2",
-        "dependsOn": ["LinkedTemplate1"],
+        "name": "LinkedTemplate3",
+        "dependsOn": ["LinkedTemplate1","LinkedTemplate2"],
 
         "properties": {
             "copy":[{
