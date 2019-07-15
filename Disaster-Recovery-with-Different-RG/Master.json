@@ -138,6 +138,7 @@
         "name": "LinkedTemplate1",
         "properties": {
             "copy":[{
+            "name": "rg",
             "count":"[length(parameters('Location-of-Resource-Groups'))]",
             "mode": "Incremental",
             "templateLink": {
@@ -146,10 +147,10 @@
             },
             "parameters": {
                 "Resource_Group-name": {
-                    "value": "[parameters('Name-of-Resource-Group')[copyIndex()]]"
+                    "value": "[parameters('Name-of-Resource-Group')[copyIndex('rg')]]"
                 },
                 "Resource_Group-location": {
-                    "value": "[parameters('Location-of-Resource-Groups')[copyIndex()]]"
+                    "value": "[parameters('Location-of-Resource-Groups')[copyIndex('rg')]]"
                 }
             }}]
         }
@@ -161,6 +162,7 @@
         "dependsOn": ["LinkedTemplate1"],
         "properties": {
             "copy":[{
+            "name": "nsg",
             "count":"[length(parameters('Location-of-Resource-Groups'))]",   
             "mode": "Incremental",
             "templateLink": {
@@ -169,28 +171,28 @@
             },
             "parameters": {
                 "Location": {
-                    "value": "[parameters('Location-of-Resource-Groups')[copyIndex()]]"
+                    "value": "[parameters('Location-of-Resource-Groups')[copyIndex('nsg')]]"
                 },
                 "NSG1-name": {
-                    "value": "[parameters('NSG1-name')[copyIndex()]]"
+                    "value": "[parameters('NSG1-name')[copyIndex('nsg')]]"
                 },
                 "NSG2-name": {
-                    "value": "[parameters('NSG2-name')[copyIndex()]]"
+                    "value": "[parameters('NSG2-name')[copyIndex('nsg')]]"
                 },
                 "NSG3-name": {
-                    "value": "[parameters('NSG3-name')[copyIndex()]]"
+                    "value": "[parameters('NSG3-name')[copyIndex('nsg')]]"
                 },
                 "subnet1-AddressPrefix": {
-                    "value": "[parameters('subnet1-AddressPrefix')[copyIndex()]]"
+                    "value": "[parameters('subnet1-AddressPrefix')[copyIndex('nsg')]]"
                 },
                 "subnet2-AddressPrefix": {
-                    "value": "[parameters('subnet2-AddressPrefix')[copyIndex()]]"
+                    "value": "[parameters('subnet2-AddressPrefix')[copyIndex('nsg')]]"
                 },
                 "subnet3-AddressPrefix": {
-                    "value": "[parameters('subnet3-AddressPrefix')[copyIndex()]]"
+                    "value": "[parameters('subnet3-AddressPrefix')[copyIndex('nsg')]]"
                 },
                 "Management-JumpBox_Subnet_AddressPrefix": {
-                    "value": "[parameters('Management-JumpBox_Subnet_AddressPrefix')[copyIndex()]]"
+                    "value": "[parameters('Management-JumpBox_Subnet_AddressPrefix')[copyIndex('nsg')]]"
                 }
             }
         }
@@ -204,6 +206,7 @@
 
         "properties": {
             "copy":[{
+            "name": "vnet"
             "count":"[length(parameters('Location-of-Resource-Groups'))]", 
             "mode": "Incremental",
             "templateLink": {
@@ -212,50 +215,50 @@
             },
             "parameters": {
                 "Virtual_Network1-name": {
-                    "value": "[parameters('Virtual_Network1-name')[copyIndex()]]"
+                    "value": "[parameters('Virtual_Network1-name')[copyIndex('vnet')]]"
                 },
                 "Location": {
-                    "value": "[parameters('Location-of-Resource-Groups')[copyIndex()]]"
+                    "value": "[parameters('Location-of-Resource-Groups')[copyIndex('vnet')]]"
                 },
                 "NSG1-name": {
-                    "value": "[parameters('NSG1-name')[copyIndex()]]"
+                    "value": "[parameters('NSG1-name')[copyIndex('vnet')]]"
                 },
                 "NSG2-name": {
-                    "value": "[parameters('NSG2-name')[copyIndex()]]"
+                    "value": "[parameters('NSG2-name')[copyIndex('vnet')]]"
                 },
                 "NSG3-name": {
-                    "value": "[parameters('NSG3-name')[copyIndex()]]"
+                    "value": "[parameters('NSG3-name')[copyIndex('vnet')]]"
                 },
                 "subnet1-name": {
-                    "value": "[parameters('subnet1-name')[copyIndex()]]"
+                    "value": "[parameters('subnet1-name')[copyIndex('vnet')]]"
                 },
                 "subnet2-name": {
-                    "value": "[parameters('subnet2-name')[copyIndex()]]"
+                    "value": "[parameters('subnet2-name')[copyIndex('vnet')]]"
                 },
                 "subnet3-name": {
-                    "value": "[parameters('subnet3-name')[copyIndex()]]"
+                    "value": "[parameters('subnet3-name')[copyIndex('vnet')]]"
                 },
                 "subnet1-AddressPrefix": {
-                    "value": "[parameters('subnet1-AddressPrefix')[copyIndex()]]"
+                    "value": "[parameters('subnet1-AddressPrefix')[copyIndex('vnet')]]"
                 },
                 "subnet2-AddressPrefix": {
-                    "value": "[parameters('subnet2-AddressPrefix')[copyIndex()]]"
+                    "value": "[parameters('subnet2-AddressPrefix')[copyIndex('vnet')]]"
                 },
                 "subnet3-AddressPrefix": {
-                    "value": "[parameters('subnet3-AddressPrefix')[copyIndex()]]"
+                    "value": "[parameters('subnet3-AddressPrefix')[copyIndex('vnet')]]"
                 },
                 "Vnet1addressPrefix": {
-                    "value": "[parameters('Vnet1addressPrefix')[copyIndex()]]"
+                    "value": "[parameters('Vnet1addressPrefix')[copyIndex('vnet')]]"
                 },
 
                 "firewallSubnet-AddressPrefix": {
-                    "value": "[parameters('firewallSubnet-AddressPrefix-Vnet1')[copyIndex()]]"
+                    "value": "[parameters('firewallSubnet-AddressPrefix-Vnet1')[copyIndex('vnet')]]"
                 },
                 "Management-JumpBox_Subnet_Name": {
-                    "value": "[parameters('Management-JumpBox_Subnet_Name')[copyIndex()]]"
+                    "value": "[parameters('Management-JumpBox_Subnet_Name')[copyIndex('vnet')]]"
                 },
                 "Management-JumpBox_Subnet_AddressPrefix": {
-                    "value": "[parameters('Management-JumpBox_Subnet_AddressPrefix')[copyIndex()]]"
+                    "value": "[parameters('Management-JumpBox_Subnet_AddressPrefix')[copyIndex('vnet')]]"
                 },
                 "enableDdosProtection": {
                     "value": "[parameters('enableDdosProtection')]"
