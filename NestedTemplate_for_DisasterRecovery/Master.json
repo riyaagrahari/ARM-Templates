@@ -243,9 +243,6 @@
 					},
 					"Management_JumpBox_Subnet_AddressPrefix": {
 						"value": "[parameters('Management_JumpBox_Subnet_AddressPrefix')]"
-					},
-					"firewallSubnet_AddressPrefix_Vnet1": {
-						"value": "[parameters('firewallSubnet_AddressPrefix_Vnet1')]"
 					}
 				}
 			}
@@ -345,7 +342,7 @@
 					"Management_JumpBox_Subnet_AddressPrefix": {
 						"value": "[parameters('Management_JumpBox_Subnet_AddressPrefix')]"
 					},
-					"firewallSubnet_AddressPrefix_Vnet2": {
+					"firewallSubnet_AddressPrefix": {
 						"value": "[parameters('firewallSubnet_AddressPrefix_Vnet1')]"
 					},
 					"enableDdosProtection": {
