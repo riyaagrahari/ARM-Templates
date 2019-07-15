@@ -267,7 +267,7 @@
 							],
 							"destinationPortRange": "21",
 							"destinationAddressPrefixes": [
-								"[parameters('subnet3-AddressPrefix')]",
+								"[parameters('subnet3-AddressPrefix')]"
 							],
 							"access": "Allow",
 							"priority": 120,
@@ -291,11 +291,11 @@
 							"protocol": "Tcp",
 							"sourcePortRange": "118",
 							"sourceAddressPrefixes": [
-								"[parameters('subnet2-AddressPrefix')]",
+								"[parameters('subnet2-AddressPrefix')]"
 							],
 							"destinationPortRange": "3306",
 							"destinationAddressPrefixes": [
-								"[parameters('subnet3-AddressPrefix')]",
+								"[parameters('subnet3-AddressPrefix')]"
 							],
 							"access": "Allow",
 							"priority": 100,
