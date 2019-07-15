@@ -206,7 +206,7 @@
 
         "properties": {
             "copy":[{
-            "name": "vnet"
+            "name": "vnet",
             "count":"[length(parameters('Location-of-Resource-Groups'))]", 
             "mode": "Incremental",
             "templateLink": {
