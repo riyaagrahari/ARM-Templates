@@ -14,13 +14,13 @@
 		"Location": {
 			"type": "string"
 		},
-		"subnet1_AddressPrefix": {
+		"subnet1_Address_Prefix": {
 			"type": "string"
 		},
-		"subnet2_AddressPrefix": {
+		"subnet2_Address_Prefix": {
 			"type": "string"
 		},
-		"subnet3_AddressPrefix": {
+		"subnet3_Address_Prefix": {
 			"type": "string"
 		},
 		"Management_JumpBox_Subnet_AddressPrefix": {
@@ -46,7 +46,7 @@
 								"80",
 								"443"
 							],
-							"destinationAddressPrefix": "[parameters('subnet1_AddressPrefix')]",
+							"destinationAddressPrefix": "[parameters('subnet1_Address_Prefix')]",
 							"access": "Allow",
 							"priority": 100,
 							"direction": "Inbound"
@@ -63,7 +63,7 @@
 								"22",
 								"3389"
 							],
-							"destinationAddressPrefix": "[parameters('subnet1_AddressPrefix')]",
+							"destinationAddressPrefix": "[parameters('subnet1_Address_Prefix')]",
 							"access": "Allow",
 							"priority": 110,
 							"direction": "Inbound"
@@ -78,12 +78,12 @@
 								"8083",
 								"445"
 							],
-							"sourceAddressPrefix": "[parameters('subnet2_AddressPrefix')]",
+							"sourceAddressPrefix": "[parameters('subnet2_Address_Prefix')]",
 							"destinationPortRanges": [
 								"8081",
 								"446"
 							],
-							"destinationAddressPrefix": "[parameters('subnet1_AddressPrefix')]",
+							"destinationAddressPrefix": "[parameters('subnet1_Address_Prefix')]",
 							"access": "Allow",
 							"priority": 120,
 							"direction": "Inbound"
@@ -95,9 +95,9 @@
 							"description": "Rule for denying Out-bound traffic to Database ",
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
-							"sourceAddressPrefix": "[parameters('subnet1_AddressPrefix')]",
+							"sourceAddressPrefix": "[parameters('subnet1_Address_Prefix')]",
 							"destinationPortRange": "*",
-							"destinationAddressPrefix": "[parameters('subnet3_AddressPrefix')]",
+							"destinationAddressPrefix": "[parameters('subnet3_Address_Prefix')]",
 							"access": "Deny",
 							"priority": 100,
 							"direction": "Outbound"
@@ -112,12 +112,12 @@
 								"8081",
 								"446"
 							],
-							"sourceAddressPrefix":"[parameters('subnet1_AddressPrefix')]",
+							"sourceAddressPrefix":"[parameters('subnet1_Address_Prefix')]",
 							"destinationPortRanges": [
 								"8083",
 								"445"
 							],
-							"destinationAddressPrefix":"[parameters('subnet2_AddressPrefix')]",
+							"destinationAddressPrefix":"[parameters('subnet2_Address_Prefix')]",
 							"access": "Allow",
 							"priority": 110,
 							"direction": "Outbound"
@@ -142,12 +142,12 @@
 								"8081",
 								"446"
 							],
-							"sourceAddressPrefix":"[parameters('subnet1_AddressPrefix')]",
+							"sourceAddressPrefix":"[parameters('subnet1_Address_Prefix')]",
 							"destinationPortRanges": [
 								"8083",
 								"445"
 							],
-							"destinationAddressPrefix":"[parameters('subnet2_AddressPrefix')]",
+							"destinationAddressPrefix":"[parameters('subnet2_Address_Prefix')]",
 							"access": "Allow",
 							"priority": 100,
 							"direction": "Inbound"
@@ -164,7 +164,7 @@
 								"22",
 								"3389"
 							],
-							"destinationAddressPrefix":"[parameters('subnet2_AddressPrefix')]",
+							"destinationAddressPrefix":"[parameters('subnet2_Address_Prefix')]",
 							"access": "Allow",
 							"priority": 110,
 							"direction": "Inbound"
@@ -176,9 +176,9 @@
 							"description": "Rule for accepting FTP requests from Database to API server",
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
-							"sourceAddressPrefix":"[parameters('subnet3_AddressPrefix')]",
+							"sourceAddressPrefix":"[parameters('subnet3_Address_Prefix')]",
 							"destinationPortRange": "21",
-							"destinationAddressPrefix":"[parameters('subnet2_AddressPrefix')]",
+							"destinationAddressPrefix":"[parameters('subnet2_Address_Prefix')]",
 							"access": "Allow",
 							"priority": 120,
 							"direction": "Inbound"
@@ -190,9 +190,9 @@
 							"description": "Rule for MySQL request",
 							"protocol": "Tcp",
 							"sourcePortRange": "118",
-							"sourceAddressPrefix": "[parameters('subnet2_AddressPrefix')]",
+							"sourceAddressPrefix": "[parameters('subnet2_Address_Prefix')]",
 							"destinationPortRange": "3306",
-							"destinationAddressPrefix":"[parameters('subnet3_AddressPrefix')]",
+							"destinationAddressPrefix":"[parameters('subnet3_Address_Prefix')]",
 							"access": "Allow",
 							"priority": 100,
 							"direction": "Outbound"
@@ -207,12 +207,12 @@
 								"8083",
 								"445"
 							],
-							"sourceAddressPrefix":"[parameters('subnet2_AddressPrefix')]",
+							"sourceAddressPrefix":"[parameters('subnet2_Address_Prefix')]",
 							"destinationPortRanges": [
 								"8081",
 								"446"
 							],
-							"destinationAddressPrefix":"[parameters('subnet1_AddressPrefix')]",
+							"destinationAddressPrefix":"[parameters('subnet1_Address_Prefix')]",
 							"access": "Allow",
 							"priority": 110,
 							"direction": "Outbound"
@@ -224,9 +224,9 @@
 							"description": "Rule for making FTP connection from API to Database server",
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
-							"sourceAddressPrefix":"[parameters('subnet2_AddressPrefix')]",
+							"sourceAddressPrefix":"[parameters('subnet2_Address_Prefix')]",
 							"destinationPortRange": "21",
-							"destinationAddressPrefix":"[parameters('subnet3_AddressPrefix')]",
+							"destinationAddressPrefix":"[parameters('subnet3_Address_Prefix')]",
 							"access": "Allow",
 							"priority": 120,
 							"direction": "Outbound"
@@ -248,9 +248,9 @@
 							"description": "Rule for accepting MySQL request from API",
 							"protocol": "Tcp",
 							"sourcePortRange": "118",
-							"sourceAddressPrefix":"[parameters('subnet2_AddressPrefix')]",
+							"sourceAddressPrefix":"[parameters('subnet2_Address_Prefix')]",
 							"destinationPortRange": "3306",
-							"destinationAddressPrefix":"[parameters('subnet3_AddressPrefix')]",
+							"destinationAddressPrefix":"[parameters('subnet3_Address_Prefix')]",
 							"access": "Allow",
 							"priority": 100,
 							"direction": "Inbound"
@@ -263,8 +263,8 @@
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
 							"destinationPortRange": "*",
-							"sourceAddressPrefixes": "[parameters('subnet1_AddressPrefix')]",
-							"destinationAddressPrefixes":"[parameters('subnet3_AddressPrefix')]",
+							"sourceAddressPrefixes": "[parameters('subnet1_Address_Prefix')]",
+							"destinationAddressPrefixes":"[parameters('subnet3_Address_Prefix')]",
 							"access": "Deny",
 							"priority": 110,
 							"direction": "Inbound"
@@ -281,7 +281,7 @@
 								"22",
 								"3389"
 							],
-							"destinationAddressPrefix": "[parameters('subnet3_AddressPrefix')]",
+							"destinationAddressPrefix": "[parameters('subnet3_Address_Prefix')]",
 							"access": "Allow",
 							"priority": 120,
 							"direction": "Inbound"
@@ -293,9 +293,9 @@
 							"description": "Rule for accepting FTP connection from API to DB server",
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
-							"sourceAddressPrefixes":"[parameters('subnet2_AddressPrefix')]",
+							"sourceAddressPrefixes":"[parameters('subnet2_Address_Prefix')]",
 							"destinationPortRange": "21",
-							"destinationAddressPrefixes":"[parameters('subnet3_AddressPrefix')]",
+							"destinationAddressPrefixes":"[parameters('subnet3_Address_Prefix')]",
 							"access": "Allow",
 							"priority": 130,
 							"direction": "Inbound"
@@ -307,9 +307,9 @@
 							"description": "Rule for MySQL response to API-server",
 							"protocol": "Tcp",
 							"sourcePortRange": "3306",
-							"sourceAddressPrefixes":"[parameters('subnet3_AddressPrefix')]",
+							"sourceAddressPrefixes":"[parameters('subnet3_Address_Prefix')]",
 							"destinationPortRange": "118",
-							"destinationAddressPrefixes":"[parameters('subnet2_AddressPrefix')]",
+							"destinationAddressPrefixes":"[parameters('subnet2_Address_Prefix')]",
 							"access": "Allow",
 							"priority": 100,
 							"direction": "Outbound"
@@ -321,9 +321,9 @@
 							"description": "Rule for sending FTP connection from Database to API server",
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
-							"sourceAddressPrefixes":"[parameters('subnet3_AddressPrefix')]",
+							"sourceAddressPrefixes":"[parameters('subnet3_Address_Prefix')]",
 							"destinationPortRange": "21",
-							"destinationAddressPrefixes":"[parameters('subnet2_AddressPrefix')]",
+							"destinationAddressPrefixes":"[parameters('subnet2_Address_Prefix')]",
 							"access": "Allow",
 							"priority": 110,
 							"direction": "Outbound"
@@ -335,9 +335,9 @@
 							"description": "Rule for denying Out-bound traffic from Database to Web ",
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
-							"sourceAddressPrefixes":"[parameters('subnet3_AddressPrefix')]",
+							"sourceAddressPrefixes":"[parameters('subnet3_Address_Prefix')]",
 							"destinationPortRange": "*",
-							"destinationAddressPrefixes":"[parameters('subnet1_AddressPrefix')]",
+							"destinationAddressPrefixes":"[parameters('subnet1_Address_Prefix')]",
 							"access": "Deny",
 							"priority": 120,
 							"direction": "Outbound"

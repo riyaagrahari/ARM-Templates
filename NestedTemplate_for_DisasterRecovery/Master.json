@@ -22,7 +22,7 @@
 			"type": "string"
 
 		},
-		"subnet1_AddressPrefix": {
+		"subnet1_Address_Prefix": {
 			"type": "string",
 			"defaultValue": "10.0.1.0/24",
 			"metadata": {
@@ -32,7 +32,7 @@
 		"subnet2_name": {
 			"type": "string"
 		},
-		"subnet2_AddressPrefix": {
+		"subnet2_Address_Prefix": {
 			"type": "string",
 			"defaultValue": "10.0.2.0/24",
 			"metadata": {
@@ -42,7 +42,7 @@
 		"subnet3_name": {
 			"type": "string"
 		},
-		"subnet3_AddressPrefix": {
+		"subnet3_Address_Prefix": {
 			"type": "string",
 			"defaultValue": "10.0.3.0/24",
 			"metadata": {
@@ -88,7 +88,7 @@
 			"type": "string"
 
 		},
-		"subnet1_AddressPrefix-Vnet2": {
+		"subnet1_Address_Prefix-Vnet2": {
 			"type": "string",
 			"defaultValue": "20.0.1.0/24",
 			"metadata": {
@@ -98,7 +98,7 @@
 		"subnet2_name_Vnet2": {
 			"type": "string"
 		},
-		"subnet2_AddressPrefix_Vnet2": {
+		"subnet2_Address_Prefix_Vnet2": {
 			"type": "string",
 			"defaultValue": "20.0.2.0/24",
 			"metadata": {
@@ -108,7 +108,7 @@
 		"subnet3_name_Vnet2": {
 			"type": "string"
 		},
-		"subnet3_AddressPrefix_Vnet2": {
+		"subnet3_Address_Prefix_Vnet2": {
 			"type": "string",
 			"defaultValue": "20.0.3.0/24",
 			"metadata": {
@@ -232,14 +232,14 @@
 					"NSG3_name": {
 						"value": "[parameters('NSG3_name')]"
 					},
-					"subnet1_AddressPrefix": {
-						"value": "[parameters('subnet1_AddressPrefix')]"
+					"subnet1_Address_Prefix": {
+						"value": "[parameters('subnet1_Address_Prefix')]"
 					},
-					"subnet2_AddressPrefix": {
-						"value": "[parameters('subnet2_AddressPrefix')]"
+					"subnet2_Address_Prefix": {
+						"value": "[parameters('subnet2_Address_Prefix')]"
 					},
-					"subnet3_AddressPrefix": {
-						"value": "[parameters('subnet3_AddressPrefix')]"
+					"subnet3_Address_Prefix": {
+						"value": "[parameters('subnet3_Address_Prefix')]"
 					},
 					"Management_JumpBox_Subnet_AddressPrefix": {
 						"value": "[parameters('Management_JumpBox_Subnet_AddressPrefix')]"
@@ -271,14 +271,14 @@
 					"NSG3_name": {
 						"value": "[parameters('NSG3_name_replica')]"
 					},
-					"subnet1_AddressPrefix": {
-						"value": "[parameters('subnet1_AddressPrefix_replica')]"
+					"subnet1_Address_Prefix": {
+						"value": "[parameters('subnet1_Address_Prefix_replica')]"
 					},
-					"subnet2_AddressPrefix": {
-						"value": "[parameters('subnet2_AddressPrefix_replica')]"
+					"subnet2_Address_Prefix": {
+						"value": "[parameters('subnet2_Address_Prefix_replica')]"
 					},
-					"subnet3_AddressPrefix": {
-						"value": "[parameters('subnet3_AddressPrefix_replica')]"
+					"subnet3_Address_Prefix": {
+						"value": "[parameters('subnet3_Address_Prefix_replica')]"
 					},
 					"Management_JumpBox_Subnet_AddressPrefix": {
 						"value": "[parameters('Management_JumpBox_Subnet_AddressPrefix_replica')]"
@@ -326,14 +326,14 @@
 					"subnet3_name": {
 						"value": "[parameters('subnet3_name')]"
 					},
-					"subnet1_AddressPrefix": {
-						"value": "[parameters('subnet1_AddressPrefix')]"
+					"subnet1_Address_Prefix": {
+						"value": "[parameters('subnet1_Address_Prefix')]"
 					},
-					"subnet2_AddressPrefix": {
-						"value": "[parameters('subnet2_AddressPrefix')]"
+					"subnet2_Address_Prefix": {
+						"value": "[parameters('subnet2_Address_Prefix')]"
 					},
-					"subnet3_AddressPrefix": {
-						"value": "[parameters('subnet3_AddressPrefix')]"
+					"subnet3_Address_Prefix": {
+						"value": "[parameters('subnet3_Address_Prefix')]"
 					},
 					"Management_JumpBox_Subnet_Name": {
 						"value": "[parameters('Management_JumpBox_Subnet_Name')]"
@@ -378,14 +378,14 @@
 					"subnet3_name": {
 						"value": "[parameters('subnet3_name_Vnet2')]"
 					},
-					"subnet1_AddressPrefix": {
-						"value": "[parameters('subnet1_AddressPrefix_replica')]"
+					"subnet1_Address_Prefix": {
+						"value": "[parameters('subnet1_Address_Prefix_replica')]"
 					},
-					"subnet2_AddressPrefix": {
-						"value": "[parameters('subnet2_AddressPrefix_replica')]"
+					"subnet2_Address_Prefix": {
+						"value": "[parameters('subnet2_Address_Prefix_replica')]"
 					},
-					"subnet3_AddressPrefix": {
-						"value": "[parameters('subnet3_AddressPrefix_replica')]"
+					"subnet3_Address_Prefix": {
+						"value": "[parameters('subnet3_Address_Prefix_replica')]"
 					},
 					"NSG1_name": {
 						"value": "[parameters('NSG1_name_replica')]"
