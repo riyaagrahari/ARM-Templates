@@ -302,6 +302,9 @@
 					"Virtual_Network1_name": {
 						"value": "[parameters('Virtual_Network1_name')]"
 					},
+					"Vnet1_address_Prefix": {
+						"value": "[parameters('Vnet1_address_Prefix')]"
+					},
 					"Location": {
 						"value": "[parameters('Location-of-Virtual_Network1')]"
 					},
@@ -376,7 +379,7 @@
 					"NSG3_name": {
 						"value": "[parameters('NSG3_name_replica')]"
 					},
-					"firewallSubnet-AddressPrefix": {
+					"firewallSubnet_AddressPrefix": {
 						"value": "[parameters('firewallSubnet_AddressPrefix_Vnet2')]"
 					},
 					"Management_JumpBox_Subnet_Name": {
