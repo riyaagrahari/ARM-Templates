@@ -50,7 +50,7 @@
 						"name": "[parameters('subnet1_name')]",
 
 						"properties": {
-							"addressPrefix": "[parameters('subnet1_AddressPrefix')]",
+							"addressPrefix": "[parameters('subnet1_Address_Prefix')]",
 							"networkSecurityGroup": {
 								"id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('NSG1_name'))]"
 							}
@@ -60,7 +60,7 @@
 						"name": "[parameters('subnet2_name')]",
 
 						"properties": {
-							"addressPrefix": "[parameters('subnet2_AddressPrefix')]",
+							"addressPrefix": "[parameters('subnet2_Address_Prefix')]",
 							"networkSecurityGroup": {
 								"id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('NSG2_name'))]"
 							}
@@ -70,7 +70,7 @@
 						"name": "[parameters('subnet3_name')]",
 
 						"properties": {
-							"addressPrefix": "[parameters('subnet3_AddressPrefix')]",
+							"addressPrefix": "[parameters('subnet3_Address_Prefix')]",
 							"networkSecurityGroup": {
 								"id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('NSG3_name'))]"
 							}
