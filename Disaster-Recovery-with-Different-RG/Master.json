@@ -139,7 +139,7 @@
         "properties": {
             "copy":[{
             "name": "rg",
-            "count":"[length(parameters('Location-of-Resource-Groups'))]",
+            "count":2,
             "mode": "Incremental",
             "templateLink": {
                 "uri": "https://raw.githubusercontent.com/riyaagrahari/ARM-Templates/master/Disaster-Recovery-with-Different-RG/CreateRG.json",
@@ -163,7 +163,7 @@
         "properties": {
             "copy":[{
             "name": "nsg",
-            "count":"[length(parameters('Location-of-Resource-Groups'))]",   
+            "count":2,   
             "mode": "Incremental",
             "templateLink": {
                 "uri": "https://raw.githubusercontent.com/riyaagrahari/ARM-Templates/master/Disaster-Recovery-with-Different-RG/CreateNSG.json",
@@ -207,7 +207,7 @@
         "properties": {
             "copy":[{
             "name": "vnet",
-            "count":"[length(parameters('Location-of-Resource-Groups'))]", 
+            "count":2, 
             "mode": "Incremental",
             "templateLink": {
                 "uri": "https://raw.githubusercontent.com/riyaagrahari/ARM-Templates/master/Disaster-Recovery-with-Different-RG/VnetTemplate.json",
