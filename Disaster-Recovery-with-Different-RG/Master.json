@@ -1,0 +1,166 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "Name_of_Resource_Group": {
+            "type":"array",
+            "defaultValue": ["RG1", "RG1-replica"]
+        },
+        "index":{
+            "type":"array",
+            "defaultValue": ["1", "2"]
+        },
+		"Location_of_Resource_Groups": {
+            "type": "array",
+            "defaultValue": ["westus","eastus"] 
+		},
+		"Virtual_Network1_name": {
+            "type": "array",
+            "defaultValue": ["VNet1","VNet1-replica"], 
+			"metadata": {
+				"description": "Name of First Virtual Network"
+			}
+        },
+        "Vnet1_address_Prefix": {
+			"type": "array",
+			"defaultValue": ["10.0.0.0/16","20.0.0.0/16"],
+			"metadata": {
+				"description": "Adress range for the Virtual_Network1_name."
+			}
+        },
+        "subnet1_name": {
+			"type": "array",
+            "defaultValue": ["sub-1","sub-1-replica"]
+        },
+        "subnet1_Address_Prefix": {
+			"type": "array",
+			"defaultValue": ["10.0.1.0/24","20.0.1.0/24"],
+			"metadata": {
+				"description": "Address range for first subnet."
+			}
+		},
+		"subnet2_name": {
+            "type": "array",
+            "defaultValue": ["sub-2","sub-2-replica"]
+		},
+		"subnet2_Address_Prefix": {
+			"type": "array",
+			"defaultValue": ["10.0.2.0/24","20.0.2.0/24"],
+			"metadata": {
+				"description": "Address range for second subnet"
+			}
+		},
+		"subnet3_name": {
+            "type": "array",
+            "defaultValue": ["sub-3","sub-3-replica"]
+		},
+		"subnet3_Address_Prefix": {
+			"type": "array",
+			"defaultValue": ["10.0.3.0/24","20.0.3.0/24"],
+			"metadata": {
+				"description": "Address range for third subnet"
+			}
+        },
+        "firewallSubnet_AddressPrefix": {
+			"type": "array",
+			"defaultValue": ["10.0.4.0/24","20.0.4.0/24"],
+			"metadata": {
+				"description": "Address range for firewall subnet"
+			}
+		},
+		"Management_JumpBox_Subnet_Name": {
+            "type": "array",
+            "defaultValue": ["admin-1","admin1-replica"]
+		},
+		"Management_JumpBox_Subnet_AddressPrefix": {
+			"type": "array",
+			"defaultValue": ["10.0.5.0/24","20.0.5.0/24"],
+			"metadata": {
+				"description": "Address range for third subnet"
+			}
+        },
+        "NSG1_name": {
+            "type": "array",
+            "defaultValue": ["NSG-1","NSG1-replica"],
+			"metadata": {
+				"description": "Name of first security group"
+			}
+		},
+		"NSG2_name": {
+            "type": "string",
+            "defaultValue": ["NSG-2","NSG2-replica"],
+			"metadata": {
+				"description": "Name of second security group"
+			}
+		},
+		"NSG3_name": {
+            "type": "string",
+            "defaultValue": ["NSG-3","NSG3-replica"],
+			"metadata": {
+				"description": "Name of third security group"
+			}
+        },
+        
+		"enableDdosProtection": {
+			"type": "bool"
+		},
+
+		"virtual_Network_Access": {
+			"type": "bool",
+			"defaultValue": true,
+			"metadata": {
+				"description": "Allow access to the virtual networks."
+			}
+		},
+		"forwarded_Traffic": {
+			"type": "bool",
+			"defaultValue": false,
+			"metadata": {
+				"description": "allow traffic forwarded by a network virtual appliance in a virtual network"
+			}
+		},
+		"gateway-Transit": {
+			"type": "bool",
+			"defaultValue": false,
+			"metadata": {
+				"description": "If there is a virtual network gateway assosciated with the vnet."
+			}
+		},
+		"remoteGateways": {
+			"type": "bool",
+			"defaultValue": false,
+			"metadata": {
+				"description": "To allow traffic from Virtual_Network1_name to Vnet2 through the gateway of Vnet2"
+			}
+        }
+    },
+    
+	"resources": [
+        {
+        "type": "Microsoft.Resources/deployments",
+        "apiVersion": "2018-05-01",
+        "name": "[concat('LinkedTemplate',parameters('index')[copyIndex()])]",
+        "copy":{
+            "name": "rg",
+            "count": "[length(parameters('Location_of_Resource_Groups'))]"
+            },
+        "properties": {
+            "mode": "Incremental",
+            "templateLink": {
+                "uri": "https://raw.githubusercontent.com/riyaagrahari/ARM-Templates/master/Disaster-Recovery-with-Different-RG/CreateRG.json",
+                "contentVersion": "1.0.0.0"
+            },
+            "parameters": {
+                "Resource_Group-name": {
+                    "value": "[parameters('Name_of_Resource_Group')[copyIndex('rg')]]"
+                },
+                "Resource_Group-location": {
+                    "value": "[parameters('Location_of_Resource_Groups')[copyIndex('rg')]]"
+                }
+           
+            }
+        }
+    }]
+    
+    }
+        

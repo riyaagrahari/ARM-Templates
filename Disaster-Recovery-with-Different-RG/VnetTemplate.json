@@ -1,0 +1,101 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+    "parameters":{
+		"Virtual_Network1-name": {
+			"type": "string",
+			"metadata":{
+
+				"description":"Name of first Virtual Network"
+			}
+		},
+		"Vnet1addressPrefix":{"type": "string"},
+		"Location":{"type": "string"},
+		"NSG1-name":{"type": "string"},
+		"NSG2-name":{"type": "string"},
+		"NSG3-name":{"type": "string"},
+		"subnet1-name":{"type": "string"},
+		"subnet2-name":{"type": "string"},
+		"subnet3-name":{"type": "string"},
+		"subnet1-AddressPrefix":{"type": "string"},
+		"subnet2-AddressPrefix":{"type": "string"},
+		"subnet3-AddressPrefix":{"type": "string"},
+		"Management-JumpBox_Subnet_AddressPrefix": {
+			"type": "string"
+		},
+		"Management-JumpBox_Subnet_Name": {
+			"type": "string"
+		},
+		"firewallSubnet-AddressPrefix":{"type": "string"},
+		"enableDdosProtection":{
+			"type": "bool"
+		}
+
+
+	},
+    "resources": [
+        {
+			"apiVersion": "2019-02-01",
+			"name": "[parameters('Virtual_Network1-name')]",
+			"type": "Microsoft.Network/virtualNetworks",
+			"location": "[parameters('Location')]",
+			
+			"properties": {
+				"addressSpace": {
+					"addressPrefixes": ["[parameters('Vnet1addressPrefix')]"]
+				},
+
+
+				"subnets": [{
+						"name": "[parameters('subnet1-name')]",
+
+						"properties": {
+							"addressPrefix": "[parameters('subnet1-AddressPrefix')]",
+							"networkSecurityGroup": {
+								"id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('NSG1-name'))]"
+							}
+						}
+					},
+					{
+						"name": "[parameters('subnet2-name')]",
+
+						"properties": {
+							"addressPrefix": "[parameters('subnet2-AddressPrefix')]",
+							"networkSecurityGroup": {
+								"id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('NSG2-name'))]"
+							}
+						}
+					},
+					{
+						"name": "[parameters('subnet3-name')]",
+
+						"properties": {
+							"addressPrefix": "[parameters('subnet3-AddressPrefix')]",
+							"networkSecurityGroup": {
+								"id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('NSG3-name'))]"
+							}
+						}
+					},
+					{
+						"name": "[parameters('Management-JumpBox_Subnet_Name')]",
+
+						"properties": {
+							"addressPrefix": "[parameters('Management-JumpBox_Subnet_AddressPrefix')]"
+						}
+					},
+					{
+						"name": "AzureFirewallSubnet",
+
+						"properties": {
+							"addressPrefix": "[parameters('firewallSubnet-AddressPrefix')]"
+
+						}
+					}
+				],
+				"enableDdosProtection": "[parameters('enableDdosProtection')]"
+			}
+
+		}
+    ]
+
+}

@@ -1,0 +1,148 @@
+{
+        "type": "Microsoft.Resources/deployments",
+        "apiVersion": "2018-05-01",
+        "name": "LinkedTemplate2",
+        "dependsOn": ["LinkedTemplate1"],
+        "properties": {
+            "copy":[{
+            "name": "nsg",
+            "count":2,   
+            "mode": "Incremental",
+            "templateLink": {
+                "uri": "https://raw.githubusercontent.com/riyaagrahari/ARM-Templates/master/Disaster-Recovery-with-Different-RG/CreateNSG.json",
+                "contentVersion": "1.0.0.0"
+            },
+            "parameters": {
+                "Location": {
+                    "value": "[parameters('Location_of_Resource_Groups')[copyIndex('nsg')]]"
+                },
+                "NSG1_name": {
+                    "value": "[parameters('NSG1_name')[copyIndex('nsg')]]"
+                },
+                "NSG2_name": {
+                    "value": "[parameters('NSG2_name')[copyIndex('nsg')]]"
+                },
+                "NSG3_name": {
+                    "value": "[parameters('NSG3_name')[copyIndex('nsg')]]"
+                },
+                "subnet1_Address_Prefix": {
+                    "value": "[parameters('subnet1_Address_Prefix')[copyIndex('nsg')]]"
+                },
+                "subnet2_Address_Prefix": {
+                    "value": "[parameters('subnet2_Address_Prefix')[copyIndex('nsg')]]"
+                },
+                "subnet3_Address_Prefix": {
+                    "value": "[parameters('subnet3_Address_Prefix')[copyIndex('nsg')]]"
+                },
+                "Management_JumpBox_Subnet_AddressPrefix": {
+                    "value": "[parameters('Management_JumpBox_Subnet_AddressPrefix')[copyIndex('nsg')]]"
+                }
+            }
+        }
+    ]
+    }},
+    {
+        "type": "Microsoft.Resources/deployments",
+        "apiVersion": "2018-05-01",
+        "name": "LinkedTemplate3",
+        "dependsOn": ["LinkedTemplate1","LinkedTemplate2"],
+
+        "properties": {
+            "copy":[{
+            "name": "vnet",
+            "count":2, 
+            "mode": "Incremental",
+            "templateLink": {
+                "uri": "https://raw.githubusercontent.com/riyaagrahari/ARM-Templates/master/Disaster-Recovery-with-Different-RG/VnetTemplate.json",
+                "contentVersion": "1.0.0.0"
+            },
+            "parameters": {
+                "Virtual_Network1_name": {
+                    "value": "[parameters('Virtual_Network1_name')[copyIndex('vnet')]]"
+                },
+                "Location": {
+                    "value": "[parameters('Location_of_Resource_Groups')[copyIndex('vnet')]]"
+                },
+                "NSG1_name": {
+                    "value": "[parameters('NSG1_name')[copyIndex('vnet')]]"
+                },
+                "NSG2_name": {
+                    "value": "[parameters('NSG2_name')[copyIndex('vnet')]]"
+                },
+                "NSG3_name": {
+                    "value": "[parameters('NSG3_name')[copyIndex('vnet')]]"
+                },
+                "subnet1_name": {
+                    "value": "[parameters('subnet1_name')[copyIndex('vnet')]]"
+                },
+                "subnet2_name": {
+                    "value": "[parameters('subnet2_name')[copyIndex('vnet')]]"
+                },
+                "subnet3_name": {
+                    "value": "[parameters('subnet3_name')[copyIndex('vnet')]]"
+                },
+                "subnet1_Address_Prefix": {
+                    "value": "[parameters('subnet1_Address_Prefix')[copyIndex('vnet')]]"
+                },
+                "subnet2_Address_Prefix": {
+                    "value": "[parameters('subnet2_Address_Prefix')[copyIndex('vnet')]]"
+                },
+                "subnet3_Address_Prefix": {
+                    "value": "[parameters('subnet3_Address_Prefix')[copyIndex('vnet')]]"
+                },
+                "Vnet1_address_Prefix": {
+                    "value": "[parameters('Vnet1_address_Prefix')[copyIndex('vnet')]]"
+                },
+
+                "firewallSubnet_AddressPrefix": {
+                    "value": "[parameters('firewallSubnet_AddressPrefix-Vnet1')[copyIndex('vnet')]]"
+                },
+                "Management_JumpBox_Subnet_Name": {
+                    "value": "[parameters('Management_JumpBox_Subnet_Name')[copyIndex('vnet')]]"
+                },
+                "Management_JumpBox_Subnet_AddressPrefix": {
+                    "value": "[parameters('Management_JumpBox_Subnet_AddressPrefix')[copyIndex('vnet')]]"
+                },
+                "enableDdosProtection": {
+                    "value": "[parameters('enableDdosProtection')]"
+                }
+            }
+        }
+    ]}
+    },
+    {
+        "type": "Microsoft.Resources/deployments",
+        "apiVersion": "2018-05-01",
+        "name": "LinkedTemplate4",
+        "dependsOn": ["LinkedTemplate3", "LinkedTemplate2"],
+        "properties": {
+            "mode": "Incremental",
+            "templateLink": {
+                "uri": "https://raw.githubusercontent.com/riyaagrahari/ARM-Templates/master/Vnet_Peering_Template/Template.json",
+                "contentVersion": "1.0.0.0"
+            },
+            "parameters": {
+                "Virtual_Network1_name": {
+                    "value": "[parameters('Virtual_Network1_name')[0]]"
+                },
+                "Virtual_Network2_name": {
+                    "value": "[parameters('Virtual_Network2-name')[1]]"
+                },
+                "Allow_Virtual_Network_Access": {
+                    "value": "[parameters('virtual_Network_Access')]"
+                },
+                "Allow_Forwarded_Traffic": {
+                    "value": "[parameters('forwarded_Traffic')]"
+                },
+                "Allow_Gateway_Transit": {
+                    "value": "[parameters('gateway-Transit')]"
+                },
+                "Use_Remote_Gateways": {
+                    "value": "[parameters('remoteGateways')]"
+                }
+
+            }
+        }
+    }
+]
+}

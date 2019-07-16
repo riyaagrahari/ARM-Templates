@@ -1,0 +1,420 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"NSG1-name": {
+			"type": "string"
+		},
+		"NSG2-name": {
+			"type": "string"
+		},
+		"NSG3-name": {
+			"type": "string"
+		},
+		"Location": {
+			"type": "string"
+		},
+		"subnet1-AddressPrefix": {
+			"type": "string"
+		},
+		"subnet2-AddressPrefix": {
+			"type": "string"
+		},
+		"subnet3-AddressPrefix": {
+			"type": "string"
+		},
+		"Management-JumpBox_Subnet_AddressPrefix": {
+			"type": "string"
+		}
+	},
+	"resources": [
+		{
+			"apiVersion": "2019-02-01",
+			"type": "Microsoft.Network/networkSecurityGroups",
+			"name": "[parameters('NSG1-name')]",
+			"location": "[parameters('Location')]",
+			"properties": {
+				"securityRules": [
+					{
+						"name": "HTTPorHTTPS-request",
+						"properties": {
+							"description": "Rule for HTTP request and HTTPS SSL request ",
+							"protocol": "Tcp",
+							"sourcePortRange": "*",
+							"sourceAddressPrefix": "*",
+							"destinationPortRanges": [
+								"80",
+								"443"
+							],
+							"destinationAddressPrefixes": [
+								"[parameters('subnet1-AddressPrefix')]"
+							],
+							"access": "Allow",
+							"priority": 100,
+							"direction": "Inbound"
+						}
+					},
+					{
+						"name": "SSHandRDP-to-WEB",
+						"properties": {
+							"description": "Rule for SSH and RDP Request",
+							"protocol": "Tcp",
+							"sourcePortRange": "*",
+							"sourceAddressPrefixes": [
+								"[parameters('Management-JumpBox_Subnet_AddressPrefix')]"
+							],
+							"destinationPortRanges": [
+								"22",
+								"3389"
+							],
+							"destinationAddressPrefixes": [
+								"[parameters('subnet1-AddressPrefix')]"
+							],
+							"access": "Allow",
+							"priority": 110,
+							"direction": "Inbound"
+						}
+					},
+					{
+						"name": "API-Web-response",
+						"properties": {
+							"description": "Rule for accepting response from API-Web Server",
+							"protocol": "Tcp",
+							"sourcePortRanges": [
+								"8083",
+								"445"
+							],
+							"sourceAddressPrefixes": [
+								"[parameters('subnet2-AddressPrefix')]"
+							],
+							"destinationPortRanges": [
+								"8081",
+								"446"
+							],
+							"destinationAddressPrefixes": [
+								"[parameters('subnet1-AddressPrefix')]"
+							],
+							"access": "Allow",
+							"priority": 120,
+							"direction": "Inbound"
+						}
+					},
+					{
+						"name": "DenyOutBoundToDB",
+						"properties": {
+							"description": "Rule for denying Out-bound traffic to Database ",
+							"protocol": "Tcp",
+							"sourcePortRange": "*",
+							"sourceAddressPrefixes": [
+								"[parameters('subnet1-AddressPrefix')]"
+							],
+							"destinationPortRange": "*",
+							"destinationAddressPrefixes": [
+								"[parameters('subnet3-AddressPrefix')]"
+							],
+							"access": "Deny",
+							"priority": 100,
+							"direction": "Outbound"
+						}
+					},
+					{
+						"name": "Web-API-request",
+						"properties": {
+							"description": "Rule for sending request from Web-API Server",
+							"protocol": "Tcp",
+							"sourcePortRanges": [
+								"8081",
+								"446"
+							],
+							"sourceAddressPrefixes": [
+								"[parameters('subnet1-AddressPrefix')]"
+							],
+							"destinationPortRanges": [
+								"8083",
+								"445"
+							],
+							"destinationAddressPrefixes": [
+								"[parameters('subnet2-AddressPrefix')]"
+							],
+							"access": "Allow",
+							"priority": 110,
+							"direction": "Outbound"
+						}
+					}
+				]
+			}
+		},
+		{
+			"apiVersion": "2019-02-01",
+			"type": "Microsoft.Network/networkSecurityGroups",
+			"name": "[parameters('NSG2-name')]",
+			"location": "[parameters('Location')]",
+			"properties": {
+				"securityRules": [
+					{
+						"name": "Web-request-API",
+						"properties": {
+							"description": "Rule for accepting requests from WEB to API ",
+							"protocol": "Tcp",
+							"sourcePortRanges": [
+								"8081",
+								"446"
+							],
+							"sourceAddressPrefixes": [
+								"[parameters('subnet1-AddressPrefix')]"
+							],
+							"destinationPortRanges": [
+								"8083",
+								"445"
+							],
+							"destinationAddressPrefixes": [
+								"[parameters('subnet2-AddressPrefix')]"
+							],
+							"access": "Allow",
+							"priority": 100,
+							"direction": "Inbound"
+						}
+					},
+					{
+						"name": "SSHandRDP-to-API",
+						"properties": {
+							"description": "Rule for SSH and RDP Request to API",
+							"protocol": "Tcp",
+							"sourcePortRange": "*",
+							"sourceAddressPrefixes": [
+								"[parameters('Management-JumpBox_Subnet_AddressPrefix')]"
+							],
+							"destinationPortRanges": [
+								"22",
+								"3389"
+							],
+							"destinationAddressPrefixes": [
+								"[parameters('subnet2-AddressPrefix')]"
+							],
+							"access": "Allow",
+							"priority": 110,
+							"direction": "Inbound"
+						}
+					},
+					{
+						"name": "FTPfromDB-API",
+						"properties": {
+							"description": "Rule for accepting FTP requests from Database to API server",
+							"protocol": "Tcp",
+							"sourcePortRange": "*",
+							"sourceAddressPrefixes": [
+								"[parameters('subnet3-AddressPrefix')]"
+							],
+							"destinationPortRange": "21",
+							"destinationAddressPrefixes": [
+								"[parameters('subnet2-AddressPrefix')]"
+							],
+							"access": "Allow",
+							"priority": 120,
+							"direction": "Inbound"
+						}
+					},
+					{
+						"name": "API-MySQL-request",
+						"properties": {
+							"description": "Rule for MySQL request",
+							"protocol": "Tcp",
+							"sourcePortRange": "118",
+							"sourceAddressPrefixes": [
+								"[parameters('subnet2-AddressPrefix')]"
+							],
+							"destinationPortRange": "3306",
+							"destinationAddressPrefixes": [
+								"[parameters('subnet3-AddressPrefix')]"
+							],
+							"access": "Allow",
+							"priority": 100,
+							"direction": "Outbound"
+						}
+					},
+					{
+						"name": "API-web-response",
+						"properties": {
+							"description": "Rule for sending response from API - WEB",
+							"protocol": "Tcp",
+							"sourcePortRanges": [
+								"8083",
+								"445"
+							],
+							"sourceAddressPrefixes": [
+								"[parameters('subnet2-AddressPrefix')]"
+							],
+							"destinationPortRanges": [
+								"8081",
+								"446"
+							],
+							"destinationAddressPrefixes": [
+								"[parameters('subnet1-AddressPrefix')]"
+							],
+							"access": "Allow",
+							"priority": 110,
+							"direction": "Outbound"
+						}
+					},
+					{
+						"name": "FTPtoDB",
+						"properties": {
+							"description": "Rule for making FTP connection from API to Database server",
+							"protocol": "Tcp",
+							"sourcePortRange": "*",
+							"sourceAddressPrefixes": [
+								"[parameters('subnet2-AddressPrefix')]"
+							],
+							"destinationPortRange": "21",
+							"destinationAddressPrefixes": [
+								"[parameters('subnet3-AddressPrefix')]"
+							],
+							"access": "Allow",
+							"priority": 120,
+							"direction": "Outbound"
+						}
+					}
+				]
+			}
+		},
+		{
+			"apiVersion": "2019-02-01",
+			"type": "Microsoft.Network/networkSecurityGroups",
+			"name": "[parameters('NSG3-name')]",
+			"location": "[parameters('Location')]",
+			"properties": {
+				"securityRules": [
+					{
+						"name": "API-DB-request",
+						"properties": {
+							"description": "Rule for accepting MySQL request from API",
+							"protocol": "Tcp",
+							"sourcePortRange": "118",
+							"sourceAddressPrefixes": [
+								"[parameters('subnet2-AddressPrefix')]"
+							],
+							"destinationPortRange": "3306",
+							"destinationAddressPrefixes": [
+								"[parameters('subnet3-AddressPrefix')]"
+							],
+							"access": "Allow",
+							"priority": 100,
+							"direction": "Inbound"
+						}
+					},
+					{
+						"name": "Web-Database",
+						"properties": {
+							"description": "Deny direct Communication between DATABASE and WEB subnets.",
+							"protocol": "Tcp",
+							"sourcePortRange": "*",
+							"destinationPortRange": "*",
+							"sourceAddressPrefixes": [
+								"[parameters('subnet1-AddressPrefix')]"
+							],
+							"destinationAddressPrefixes": [
+								"[parameters('subnet3-AddressPrefix')]"
+							],
+							"access": "Deny",
+							"priority": 110,
+							"direction": "Inbound"
+						}
+					},
+					{
+						"name": "SSHandRDP-from-admin-to-db",
+						"properties": {
+							"description": "Rule for SSH Request",
+							"protocol": "Tcp",
+							"sourcePortRange": "*",
+							"sourceAddressPrefixes": [
+								"[parameters('Management-JumpBox_Subnet_AddressPrefix')]"
+							],
+							"destinationPortRanges": [
+								"22",
+								"3389"
+							],
+							"destinationAddressPrefixes": [
+								"[parameters('subnet3-AddressPrefix')]"
+							],
+							"access": "Allow",
+							"priority": 120,
+							"direction": "Inbound"
+						}
+					},
+					{
+						"name": "FTPfromAPI-DB-Inbound",
+						"properties": {
+							"description": "Rule for accepting FTP connection from API to DB server",
+							"protocol": "Tcp",
+							"sourcePortRange": "*",
+							"sourceAddressPrefixes": [
+								"[parameters('subnet2-AddressPrefix')]"
+							],
+							"destinationPortRange": "21",
+							"destinationAddressPrefixes": [
+								"[parameters('subnet3-AddressPrefix')]"
+							],
+							"access": "Allow",
+							"priority": 130,
+							"direction": "Inbound"
+						}
+					},
+					{
+						"name": "MySQL-API-response",
+						"properties": {
+							"description": "Rule for MySQL response to API-server",
+							"protocol": "Tcp",
+							"sourcePortRange": "3306",
+							"sourceAddressPrefixes": [
+								"[parameters('subnet3-AddressPrefix')]"
+							],
+							"destinationPortRange": "118",
+							"destinationAddressPrefixes": [
+								"[parameters('subnet2-AddressPrefix')]"
+							],
+							"access": "Allow",
+							"priority": 100,
+							"direction": "Outbound"
+						}
+					},
+					{
+						"name": "FTPfromDB-API-Outbound",
+						"properties": {
+							"description": "Rule for sending FTP connection from Database to API server",
+							"protocol": "Tcp",
+							"sourcePortRange": "*",
+							"sourceAddressPrefixes": [
+								"[parameters('subnet3-AddressPrefix')]"
+							],
+							"destinationPortRange": "21",
+							"destinationAddressPrefixes": [
+								"[parameters('subnet2-AddressPrefix')]"
+							],
+							"access": "Allow",
+							"priority": 110,
+							"direction": "Outbound"
+						}
+					},
+					{
+						"name": "DenyConnectionToWeb",
+						"properties": {
+							"description": "Rule for denying Out-bound traffic from Database to Web ",
+							"protocol": "Tcp",
+							"sourcePortRange": "*",
+							"sourceAddressPrefixes": [
+								"[parameters('subnet3-AddressPrefix')]"
+							],
+							"destinationPortRange": "*",
+							"destinationAddressPrefixes": [
+								"[parameters('subnet1-AddressPrefix')]"
+							],
+							"access": "Deny",
+							"priority": 120,
+							"direction": "Outbound"
+						}
+					}
+				]
+			}
+		}
+	]
+}
