@@ -5,7 +5,7 @@
     "storage_Account_Name": {
       "type": "string",
       "metadata": {
-        "description": "Name of Storage Account"
+        "description": "Name of Storage Account (must be between 3 and 24 characters in length and use numbers and lower-case letters only)"
       }
     },
     "storage_Account_Location": {
@@ -16,18 +16,21 @@
     },
     "storage_Account_Type": {
       "type": "string",
+	  "default": "Standard_LRS"
       "metadata": {
         "description": "Type of Storage Account (like Standard_GRS, Standard_LRS etc.)"
       }
     },
     "storage_Account_Kind": {
       "type": "string",
+	  "default":"StorageV2"
       "metadata": {
         "description": "Kind of Storage Account (like StorageV2)"
       }
     },
     "storage_Account-access_Tier": {
       "type": "string",
+	  "default": "Cold",
       "metadata": {
         "description": "Access-Tier associated to Storage Account- Hot, Cold, Archive"
       }
